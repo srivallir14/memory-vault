@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Mana Memories, Nee Words Lo — Vamsi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --black:#080808;
+    --dark:#0d0d0d;
+    --cream:#eee9df;
+    --gold:#c8aa72;
+    --gold-light:#dfc995;
+    --muted:#8d8981;
+    --border:rgba(238,233,223,.13);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{background:var(--black);scroll-behavior:smooth}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 20%,rgba(200,170,114,.09),transparent 32%),
+        var(--black);
+    color:var(--cream);
+    font-family:"Inter",Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+button,input,textarea{font:inherit}
+
+button{
+    border:0;
+    outline:0;
+    cursor:pointer;
+    color:var(--cream);
+    background:none;
+}
+
+.screen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 22px;
+}
+
+.hidden{display:none!important}
+
+/* INTRO */
+#intro{
+    position:relative;
+    overflow:hidden;
+}
+
+.intro-content{
+    position:relative;
+    z-index:2;
+    width:min(850px,100%);
+    text-align:center;
+    animation:appear 1.4s ease both;
+}
+
+.kicker{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:5px;
+    margin-bottom:28px;
+}
+
+.intro-content h1{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-weight:300;
+    font-size:clamp(62px,10vw,130px);
+    line-height:.82;
+    letter-spacing:-4px;
+}
+
+.intro-content h1 em{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.intro-copy{
+    max-width:590px;
+    margin:38px auto 0;
+    color:#b0aaa0;
+    font-size:13px;
+    line-height:2;
+}
+
+.intro-note{
+    margin-top:26px;
+    color:#6f6a63;
+    font-size:9px;
+    letter-spacing:2px;
+    line-height:1.8;
+}
+
+.primary-btn{
+    margin-top:42px;
+    padding:16px 28px;
+    border:1px solid rgba(238,233,223,.3);
+    font-size:9px;
+    letter-spacing:3px;
+    transition:.4s ease;
+}
+
+.primary-btn span{color:var(--gold);margin-left:14px}
+
+.primary-btn:hover{
+    background:var(--cream);
+    color:var(--black);
+    transform:translateY(-3px);
+}
+
+.intro-footer{
+    position:absolute;
+    z-index:2;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:15px;
+    white-space:nowrap;
+    color:#777168;
+    font-size:7px;
+    letter-spacing:3px;
+}
+
+/* QUESTIONNAIRE */
+#quiz{
+    min-height:100svh;
+    align-items:stretch;
+    padding:0;
+}
+
+.quiz-shell{
+    width:min(1050px,100%);
+    min-height:100svh;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    padding:28px clamp(20px,5vw,55px) 30px;
+}
+
+.quiz-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:18px;
+}
+
+.quiz-label{
+    color:var(--gold);
+    font-size:8px;
+    letter-spacing:4px;
+}
+
+.quiz-count{
+    color:#66615a;
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.progress-wrap{
+    height:1px;
+    margin-top:1px;
+    background:rgba(238,233,223,.08);
+}
+
+.progress{
+    height:100%;
+    width:0;
+    background:var(--gold);
+    transition:width .45s ease;
+}
+
+.question-area{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:70px 0;
+}
+
+.section-tag{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:4px;
+    margin-bottom:24px;
+}
+
+.question-number{
+    color:#5d5952;
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.question{
+    max-width:900px;
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(42px,6.2vw,76px);
+    font-weight:300;
+    line-height:.94;
+    letter-spacing:-2px;
+}
+
+.question .gold{color:var(--gold);font-style:italic}
+
+.answer-box{
+    width:100%;
+    min-height:150px;
+    margin-top:42px;
+    padding:20px 0;
+    resize:vertical;
+    border:0;
+    border-top:1px solid rgba(238,233,223,.18);
+    border-bottom:1px solid rgba(238,233,223,.18);
+    outline:0;
+    background:transparent;
+    color:var(--cream);
+    font-size:15px;
+    line-height:1.8;
+    caret-color:var(--gold);
+}
+
+.answer-box::placeholder{color:#4f4b45}
+
+.quiz-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-top:1px solid var(--border);
+    padding-top:18px;
+}
+
+.bottom-note{
+    color:#55514b;
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:22px;
+}
+
+.nav-btn{
+    padding:10px 0;
+    border-bottom:1px solid rgba(238,233,223,.2);
+    font-size:8px;
+    letter-spacing:3px;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+.nav-btn:disabled{
+    opacity:.25;
+    cursor:not-allowed;
+}
+
+.save-note{
+    margin-top:12px;
+    text-align:right;
+    color:#44413c;
+    font-size:7px;
+    letter-spacing:1.5px;
+}
+
+/* FINAL */
+#final{
+    text-align:center;
+}
+
+.final-content{
+    width:min(850px,100%);
+    animation:appear 1.2s ease both;
+}
+
+.final-mark{
+    width:72px;
+    height:72px;
+    margin:0 auto 32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(200,170,114,.4);
+    border-radius:50%;
+    color:var(--gold);
+    font-size:25px;
+}
+
+.final-content h2{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(52px,8vw,92px);
+    font-weight:300;
+    line-height:.9;
+    letter-spacing:-3px;
+}
+
+.final-content h2 em{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.final-copy{
+    max-width:580px;
+    margin:35px auto 0;
+    color:#88837b;
+    line-height:2;
+    font-size:13px;
+}
+
+.final-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:42px;
+}
+
+.secondary-btn{
+    padding:15px 22px;
+    border-bottom:1px solid rgba(238,233,223,.25);
+    color:#aaa49a;
+    font-size:8px;
+    letter-spacing:3px;
+}
+
+.secondary-btn:hover{color:var(--gold);border-color:var(--gold)}
+
+.seal{
+    margin-top:38px;
+    color:#45413b;
+    font-size:7px;
+    letter-spacing:3px;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(18px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.fade-out{animation:fadeOut .35s ease forwards}
+
+.fade-in{animation:appear .45s ease both}
+
+@keyframes fadeOut{
+    to{opacity:0;transform:translateY(-8px)}
+}
+
+@media(max-width:700px){
+    .screen{padding:25px 18px}
+
+    .intro-content h1{
+        font-size:clamp(58px,17vw,90px);
+        letter-spacing:-2px;
+    }
+
+    .intro-copy{
+        font-size:12px;
+        line-height:1.9;
+    }
+
+    .intro-footer{
+        font-size:6px;
+        letter-spacing:2px;
+        gap:9px;
+    }
+
+    .quiz-shell{
+        padding:20px 18px 22px;
+    }
+
+    .question-area{
+        padding:50px 0;
+    }
+
+    .question{
+        font-size:clamp(38px,12vw,62px);
+    }
+
+    .answer-box{
+        min-height:125px;
+        font-size:14px;
+    }
+
+    .quiz-bottom{
+        align-items:flex-end;
+    }
+
+    .bottom-note{display:none}
+
+    .nav-buttons{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .final-content h2{
+        font-size:clamp(50px,14vw,76px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section id="intro" class="screen">
+    <div class="intro-content">
+        <p class="kicker">A PRIVATE CHAPTER / 2026</p>
+
+        <h1>
+            Mana Memories,<br>
+            Nee Words <em>Lo.</em>
+        </h1>
+
+        <p class="intro-copy">
+            Nuvvu nannu years nunchi telusu.
+            Naa moods, naa madness, naa dreams,
+            naa fights, naa happiness — anni chusav.
+            <br><br>
+            Kaani oka question...
+            <br>
+            <strong>Neeku naa gurinchi entha varaku telusu?</strong>
+        </p>
+
+        <p class="intro-note">
+            NO GOOGLE · NO ASKING HER · NO CHEATING<br>
+            JUST ANSWER WHAT YOU GENUINELY REMEMBER.
+        </p>
+
+        <button class="primary-btn" id="startBtn">
+            ENTER THE CHAPTER <span>→</span>
+        </button>
+    </div>
+
+    <div class="intro-footer">
+        <span>VAMSI</span>
+        <span>✦</span>
+        <span>A SISTER'S LITTLE TEST</span>
+    </div>
+</section>
+
+
+<!-- QUESTIONS -->
+<section id="quiz" class="screen hidden">
+    <div class="quiz-shell">
+
+        <div class="quiz-top">
+            <div class="quiz-label">MANA MEMORIES, NEE WORDS LO</div>
+            <div class="quiz-count" id="quizCount">01 / 52</div>
+        </div>
+
+        <div class="progress-wrap">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="question-area" id="questionArea">
+            <div class="section-tag" id="sectionTag"></div>
+            <div class="question-number" id="questionNumber"></div>
+            <h2 class="question" id="questionText"></h2>
+
+            <textarea
+                id="answer"
+                class="answer-box"
+                placeholder="Nee answer ikkada rayi..."
+                autocomplete="off"
+                spellcheck="false"
+            ></textarea>
+        </div>
+
+        <div class="quiz-bottom">
+            <div class="bottom-note">YOUR ANSWERS ARE SAVED ON THIS DEVICE</div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prevBtn">← PREVIOUS</button>
+                <button class="nav-btn" id="nextBtn">NEXT →</button>
+            </div>
+        </div>
+
+        <div class="save-note" id="saveNote">
+            Nothing leaves this page while you're answering.
+        </div>
+    </div>
+</section>
+
+
+<!-- FINAL -->
+<section id="final" class="screen hidden">
+    <div class="final-content">
+
+        <div class="final-mark">♢</div>
+
+        <p class="kicker">ARCHIVE 13 / RESPONSE SEALED</p>
+
+        <h2>
+            The vault is<br>
+            <em>sealed.</em>
+        </h2>
+
+        <p class="final-copy">
+            You answered from what you remember.
+            That's exactly what this was meant to capture.
+            <br><br>
+            Your answers have been sent to the private response vault.
+            Srivalli can now receive them without you having to send a file manually. 👀
+        </p>
+
+        <div class="final-actions">
+            <button class="primary-btn" id="downloadBtn">
+                DOWNLOAD MY ANSWERS <span>↓</span>
+            </button>
+
+            <button class="secondary-btn" id="copyBtn">
+                COPY MY ANSWERS
+            </button>
+        </div>
+
+        <p class="seal">
+            YOUR RESPONSES HAVE BEEN PRESERVED · ARCHIVE 13 COMES LATER.
+        </p>
+    </div>
+</section>
+
+
+<script>
+const questions = [
+    {
+        section:"PART 01 / EASY START",
+        q:"Naa full name enti?"
+    },
+    {
+        section:"PART 01 / EASY START",
+        q:"Nenu “no” cheppaleni oka thing enti? 😂"
+    },
+    {
+        section:"PART 01 / EASY START",
+        q:"Nenu ekkuvaga ye type of songs enjoy chesthanu?"
+    },
+    {
+        section:"PART 01 / EASY START",
+        q:"Naa perfect day ela untundi ani nuvvu anukuntunnav?"
+    },
+    {
+        section:"PART 01 / EASY START",
+        q:"Nannu instant-ga happy chese thing enti?"
+    },
+    {
+        section:"PART 01 / EASY START",
+        q:"Nenu ekkuva time waste chese pani enti? 😂"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Naa biggest dream enti ani nuvvu anukuntunnav?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Life lo nenu deni gurinchi most serious-ga untanu?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Nenu ekkuvaga deni gurinchi worry or overthink chesthanu?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Nenu upset ayinappudu usually em chesthanu?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Nenu angry ayinappudu first nuvvu notice chese thing enti? 👀"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Nenu ekkuvaga overthink chese topic enti?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"“Naaku em problem ledu” ani cheppina, actually nannu hurt chese thing enti?"
+    },
+    {
+        section:"PART 02 / YOU SHOULD KNOW THIS",
+        q:"Naa gurinchi others easily understand cheyyaleni oka thing enti?"
+    },
+    {
+        section:"PART 03 / BROTHER KNOWS SISTER",
+        q:"Nenu secretly proud-ga feel ayye thing enti ani nuvvu anukuntunnav?"
+    },
+    {
+        section:"PART 03 / BROTHER KNOWS SISTER",
+        q:"Nenu life lo lose avvakudadhu ani ekkuvaga fear ayye thing enti?"
+    },
+    {
+        section:"PART 03 / BROTHER KNOWS SISTER",
+        q:"Nenu eppudu most happy-ga untanu ani nuvvu anukuntunnav?"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Naalo neeku most annoying thing enti? 😂 Honest-ga cheppu!"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Nenu ninnu ekkuvaga irritate chese pani enti?"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Nenu chese ye thing chusi neeku automatic-ga navvu vasthundi?"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Mana iddariki unna funniest memory enti? 😂"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Mana iddari madhya jarigina most ridiculous fight enti?"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Mana arguments lo usually evaru win avutharu? And please… DON'T LIE. 👀"
+    },
+    {
+        section:"PART 04 / MANA MADNESS",
+        q:"Nannu just 3 words lo describe cheyyali ante, aa 3 words enti?"
+    },
+    {
+        section:"PART 05 / MANA MEMORIES",
+        q:"Naatho unna nee favorite memory enti?"
+    },
+    {
+        section:"PART 05 / MANA MEMORIES",
+        q:"Naatho jarigina ye moment ni nuvvu life-long marchipovu?"
+    },
+    {
+        section:"PART 05 / MANA MEMORIES",
+        q:"Mana relationship lo eppatiki change avvakudadhu ani nuvvu anukune thing enti?"
+    },
+    {
+        section:"PART 06 / FUTURE ME",
+        q:"5 years tarvatha nannu ekkada imagine chesthunnav?"
+    },
+    {
+        section:"PART 06 / FUTURE ME",
+        q:"Future lo nenu elanti person avuthanu ani nuvvu anukuntunnav?"
+    },
+    {
+        section:"PART 06 / FUTURE ME",
+        q:"Naa future kosam nuvvu naaku oka advice ivvalante, adi enti?"
+    },
+    {
+        section:"PART 07 / DEEP OBSERVATION",
+        q:"Na gurinchi naaku kuda teliyani oka thing nuvvu notice chesav anukunte, adi enti?"
+    },
+    {
+        section:"PART 07 / DEEP OBSERVATION",
+        q:"Naa nundi nuvvu nerchukunna oka thing enti?"
+    },
+    {
+        section:"PART 07 / DEEP OBSERVATION",
+        q:"Nenu realize avvakunda neeku nerpinchina oka lesson enti?"
+    },
+    {
+        section:"PART 07 / DEEP OBSERVATION",
+        q:"Naatho oka day ni malli relive cheyyagaligithe, ye day choose chesthav? Why?"
+    },
+    {
+        section:"PART 07 / DEEP OBSERVATION",
+        q:"20 years tarvatha manam malli kalisinappudu, mana relationship lo em change avvakudadhu ani nuvvu hope chesthav?"
+    },
+    {
+        section:"PART 08 / NO FILTER",
+        q:"Nuvvu normally naatho cheppavu… but ippudu cheppali ante, naaku em chepthav?"
+    },
+    {
+        section:"PART 08 / NO FILTER",
+        q:"Nenu nee life lo exactly what place occupy chesthunnanu ani nuvvu feel avuthunnav?"
+    },
+    {
+        section:"PART 08 / NO FILTER",
+        q:"Naa gurinchi nuvvu secretly admire chese quality enti?"
+    },
+    {
+        section:"FINAL / ONE SENTENCE",
+        q:"Nuvvu vere vallaki nannu introduce cheyyali ante… “Srivalli is the kind of person who ______.” Complete the sentence. ❤️"
+    },
+    {
+        section:"SECRET FINAL / NO FILTER",
+        q:"Annaya… ippudu jokes pakkana pedithe. Naa kosam nee heart lo unna oka thing cheppu… adi nenu eppudu marchipokudadhu ani nuvvu anukuntunnav. ❤️"
+    }
+];
+
+let current = 0;
+let answers = JSON.parse(localStorage.getItem("vamsiBrotherTestAnswers") || "{}");
+
+// AFTER DEPLOYING THE GOOGLE APPS SCRIPT, PASTE ITS WEB APP URL HERE.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMJqdkyfuyqty04xSD5xMP5z7EyM2ZkUikSGZuGMFqM7Io_5mkjeHDbPZ5QOgxB7MkFA/exec";
+
+let submissionComplete = false;
+
+const intro = document.getElementById("intro");
+const quiz = document.getElementById("quiz");
+const final = document.getElementById("final");
+
+const startBtn = document.getElementById("startBtn");
+const questionArea = document.getElementById("questionArea");
+const sectionTag = document.getElementById("sectionTag");
+const questionNumber = document.getElementById("questionNumber");
+const questionText = document.getElementById("questionText");
+const answer = document.getElementById("answer");
+const quizCount = document.getElementById("quizCount");
+const progress = document.getElementById("progress");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const saveNote = document.getElementById("saveNote");
+
+function saveCurrentAnswer(){
+    answers[current] = answer.value;
+    localStorage.setItem("vamsiBrotherTestAnswers", JSON.stringify(answers));
+}
+
+function renderQuestion(animate=true){
+    const item = questions[current];
+
+    if(animate){
+        questionArea.classList.remove("fade-in");
+        void questionArea.offsetWidth;
+        questionArea.classList.add("fade-in");
+    }
+
+    sectionTag.textContent = item.section;
+    questionNumber.textContent = String(current + 1).padStart(2,"0");
+    questionText.textContent = item.q;
+    answer.value = answers[current] || "";
+
+    quizCount.textContent =
+        String(current + 1).padStart(2,"0") +
+        " / " +
+        String(questions.length).padStart(2,"0");
+
+    progress.style.width =
+        ((current + 1) / questions.length * 100) + "%";
+
+    prevBtn.disabled = current === 0;
+
+    if(current === questions.length - 1){
+        nextBtn.textContent = "SEAL ANSWERS →";
+    }else{
+        nextBtn.textContent = "NEXT →";
+    }
+
+    answer.focus();
+}
+
+function openQuiz(){
+    intro.classList.add("hidden");
+    quiz.classList.remove("hidden");
+    renderQuestion(false);
+}
+
+async function finishQuiz(){
+    saveCurrentAnswer();
+
+    if(GOOGLE_SCRIPT_URL.includes("PASTE_YOUR_")){
+        alert("The questionnaire is not connected to the response system yet. Please ask Srivalli to add the Google Apps Script URL.");
+        return;
+    }
+
+    nextBtn.disabled = true;
+    prevBtn.disabled = true;
+    nextBtn.textContent = "SENDING…";
+
+    try{
+        const payload = new URLSearchParams();
+        payload.append("name", "Vamsi");
+        payload.append("answers", JSON.stringify(answers));
+        payload.append("completedAt", new Date().toISOString());
+
+        // no-cors is intentional: the form only needs to send the answers.
+        // Google Apps Script stores them in the owner's Google Sheet.
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: payload.toString()
+        });
+
+        submissionComplete = true;
+        localStorage.setItem("vamsiBrotherTestSubmitted", "true");
+
+        quiz.classList.add("hidden");
+        final.classList.remove("hidden");
+        window.scrollTo(0,0);
+
+    }catch(error){
+        console.error(error);
+        alert("The answers could not be sent. Please check your internet connection and try again.");
+        nextBtn.disabled = false;
+        prevBtn.disabled = false;
+        nextBtn.textContent = "SEAL ANSWERS →";
+    }
+}
+
+startBtn.addEventListener("click", openQuiz);
+
+answer.addEventListener("input", ()=>{
+    answers[current] = answer.value;
+    localStorage.setItem("vamsiBrotherTestAnswers", JSON.stringify(answers));
+
+    const wordCount = answer.value.trim()
+        ? answer.value.trim().split(/\s+/).length
+        : 0;
+
+    saveNote.textContent =
+        wordCount
+        ? `SAVED · ${wordCount} WORD${wordCount === 1 ? "" : "S"}`
+        : "YOUR ANSWER WILL BE SAVED ON THIS DEVICE";
+});
+
+prevBtn.addEventListener("click", ()=>{
+    saveCurrentAnswer();
+
+    if(current > 0){
+        current--;
+        renderQuestion();
+    }
+});
+
+nextBtn.addEventListener("click", ()=>{
+    saveCurrentAnswer();
+
+    if(current < questions.length - 1){
+        current++;
+        renderQuestion();
+    }else{
+        finishQuiz();
+    }
+});
+
+document.addEventListener("keydown",(event)=>{
+    if(quiz.classList.contains("hidden")) return;
+
+    if(event.ctrlKey || event.metaKey || event.altKey) return;
+
+    if(event.key === "ArrowLeft"){
+        prevBtn.click();
+    }
+
+    if(event.key === "ArrowRight"){
+        nextBtn.click();
+    }
+});
+
+function buildResponseText(){
+    const now = new Date();
+
+    let text = "";
+    text += "MANA MEMORIES, NEE WORDS LO — VAMSI\n";
+    text += "========================================\n";
+    text += "A private response for Srivalli\n";
+    text += "Completed: " + now.toLocaleString() + "\n";
+    text += "========================================\n\n";
+
+    questions.forEach((item,index)=>{
+        text += `${String(index+1).padStart(2,"0")}. ${item.section}\n`;
+        text += `Q: ${item.q}\n`;
+        text += `A: ${answers[index] || "[No answer]"}\n\n`;
+        text += "----------------------------------------\n\n";
+    });
+
+    text += "END OF RESPONSE\n";
+    text += "THE VAULT IS SEALED.\n";
+
+    return text;
+}
+
+document.getElementById("downloadBtn").addEventListener("click",()=>{
+    const blob = new Blob([buildResponseText()],{type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Vamsi-Brother-Test-Answers.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    URL.revokeObjectURL(url);
+});
+
+document.getElementById("copyBtn").addEventListener("click",async()=>{
+    try{
+        await navigator.clipboard.writeText(buildResponseText());
+        document.getElementById("copyBtn").textContent = "COPIED ✓";
+
+        setTimeout(()=>{
+            document.getElementById("copyBtn").textContent = "COPY MY ANSWERS";
+        },1800);
+    }catch(error){
+        alert("Copy was blocked by the browser. Use DOWNLOAD MY ANSWERS instead.");
+    }
+});
+</script>
+
+</body>
+</html>

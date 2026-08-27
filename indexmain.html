@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mana Memories, Nee Words Lo — Vamsi</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="grain"></div>
+
+
+    <!-- =================================================
+     OPENING
+================================================= -->
+
+    <section id="opening" class="screen">
+
+        <div class="opening-content">
+
+            <p class="small-text">
+                NEEKOSAM CHESINA OKA CHINNA MEMORY ANNAYA
+            </p>
+
+            <h1>
+                Konni moments<br>
+                marchipovadaniki kaadhu…<br>
+                <span>life anthaa gurthundipovadaniki Annaya.</span>
+            </h1>
+
+            <p class="subtitle">
+                Mana moments, mana memories, mana pichithanam…<br>
+                inka cheppakunda migilipoyina konni maatala anni.
+            </p>
+
+            <button id="beginBtn">
+                BEGIN THE JOURNEY <span>→</span>
+            </button>
+
+        </div>
+
+        <div class="bottom-info">
+            <span>EST. 2005</span>
+            <span>✦</span>
+            <span>PRIVATE ARCHIVE</span>
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+     PASSWORD
+================================================= -->
+
+    <section id="vault" class="screen hidden">
+
+        <div class="vault-box">
+
+            <p class="vault-label">
+                PRIVATE ARCHIVE
+            </p>
+
+            <div class="lock">
+                ♢
+            </div>
+
+            <h2>
+                THE MEMORY VAULT
+            </h2>
+
+            <p class="for-text">
+                Ee memories anni ni kosame
+            </p>
+
+            <h3>
+                VAMSI
+            </h3>
+
+            <p class="instruction">
+                Enter the password…<br>
+                appude ee memories unlock avuthayi.
+            </p>
+
+            <div class="password-container">
+
+                <input type="password" id="password" placeholder="••••••••">
+
+                <button id="unlockBtn">
+                    UNLOCK
+                </button>
+
+            </div>
+
+            <p id="error"></p>
+
+            <div class="vault-footer">
+                <span>CLASSIFIED</span>
+                <span>•</span>
+                <span>2026</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+     WELCOME
+================================================= -->
+
+    <section id="welcome" class="screen hidden">
+
+        <div class="welcome-content">
+
+            <p class="small-text">
+                ACCESS GRANTED
+            </p>
+
+            <div class="line"></div>
+
+            <h1>
+                Welcome to<br>
+                <span>your story.</span>
+            </h1>
+
+            <p>
+                Prathi photo venaka oka moment untundi.<br>
+                Prathi moment venaka oka story untundi.<br>
+                Ee story maatram…nidhi.
+            </p>
+
+            <button id="enterArchive">
+                ENTER THE ARCHIVE <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+     ARCHIVE
+================================================= -->
+
+    <main id="archive" class="hidden">
+
+        <header class="archive-header">
+
+            <div>
+
+                <p class="archive-label">
+                    PRIVATE ARCHIVE / 2026
+                </p>
+
+                <h1>
+                    Vamsi<span>.</span>
+                </h1>
+
+            </div>
+
+            <div class="archive-number">
+                21
+                <small>years</small>
+            </div>
+
+        </header>
+
+
+        <section class="archive-intro">
+
+            <p class="small-text">
+                THE ARCHIVE
+            </p>
+
+            <h2>
+                A few pieces<br>
+                of <em>your story...</em>
+            </h2>
+
+            <p>
+                chaala ekkuva memories, adho ala.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+     CARDS
+================================================= -->
+
+        <section class="archive-grid">
+
+
+            <!-- 01 STORY -->
+
+            <article class="archive-card large-card">
+                <div class="archive-card">
+                    <div class="card-number">01</div>
+
+                    <div class="card-content">
+                        <span>TIMELINE</span>
+
+                        <h3>OurStory</h3>
+
+                        <p>
+                            Almost four years of memories,<br>
+                            konchem chaos, endless conversations,<br>
+                            inka madhyalo jarigina anno vishyalu.
+                        </p>
+
+                        <button class="open-card" onclick="openSection('storySection')">
+                            OPEN STORY →
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- 02 Nee World — Nee lens nunchi -->
+
+            <article class="archive-card photo-card">
+
+                <div class="photo-background">
+
+                    <img src="images/c1.jpg" alt="Vamsi photography">
+
+                </div>
+
+                <div class="photo-overlay"></div>
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <div class="card-content">
+
+                    <span>Nee World — Nee lens nunchi</span>
+
+                    <h3>
+                        Nee lens nunchi
+                    </h3>
+
+                    <p>
+                        Andaru chuse world okkate…<br>
+                        kaani nuvvu chuse way is different Annaya.
+                    </p>
+
+                    <button class="open-card" onclick="openSection('photos')">
+                        Nee Frames Chooddhaama →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="archive-card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <div class="card-content">
+
+                    <span>21 YEARS OF YOU</span>
+
+                    <h3>
+                        21 Things That Make You… You
+                    </h3>
+
+                    <p>
+                        21 chinna chinna things…<br>
+                        avi kalisi nuvvu ane person ni create chestayi.
+                    </p>
+
+                    <button class="open-card" onclick="openSection('things')">
+                        DISCOVER →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- 04 VIDEO -->
+
+            <article class="archive-card video-card">
+
+                <video autoplay muted loop playsinline>
+
+                    <source src="video/memories.mp4" type="video/mp4">
+
+                </video>
+
+                <div class="video-overlay"></div>
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <div class="card-content">
+
+                    <span>MEMORIES IN MOTION</span>
+
+                    <h3>
+                        Press Play
+                    </h3>
+
+                    <p>
+                        Konni memories photo lo kanna…<br>
+                        kadilthe inka bhaguntay Annaya.
+                    </p>
+
+                    <button class="open-card" onclick="openSection('video')">
+                        WATCH →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- 05 MESSAGE -->
+
+            <article class="archive-card message-card">
+
+                <div class="card-number">
+                    05
+                </div>
+
+                <div class="card-content">
+
+                    <span>NAA NUNCHI…</span>
+
+                    <h3>
+                        A Message
+                    </h3>
+
+                    <p>
+                        Something I wanted you to hear.
+                    </p>
+
+                    <button id="voiceBtn">
+                        ▶ PLAY MESSAGE
+                    </button>
+
+                    <audio id="voiceMessage">
+                        <source src="audio/message.mp3" type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+            <!-- 06 MULTIVERSE -->
+
+            <article class="archive-card large-card multiverse-card">
+
+                <div class="card-number">
+                    06
+                </div>
+
+                <div class="card-content">
+
+                    <span>Oka Vela… WHAT IF?</span>
+
+                    <h3>
+                        The Multiverse
+                    </h3>
+
+                    <p>
+                        Worlds veraina…<br>
+                        lives veraina…<br>
+                        Nuvvu nuvve.
+                    </p>
+
+                    <button class="open-card" onclick="openSection('multiverse')">
+                        ENTER →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- 07 FUTURE -->
+
+            <article class="archive-card future-card">
+
+                <div class="card-number">
+                    07
+                </div>
+
+                <div class="card-content">
+
+                    <span>
+                        CLASSIFIED / 2036
+                    </span>
+
+                    <h3>
+                        10 Years Tarvatha Maybe…
+                    </h3>
+
+                    <p>
+                        Oka camera tho start ayina dream…<br>
+                        10 years lo ekkadiki teesukeltundo choodali.
+                    </p>
+
+                    <button class="open-card" onclick="openSection('future')">
+                        Open Chaos →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- 08 INKA LOCKED 🔒 -->
+
+            <article class="archive-card locked-card">
+
+                <div class="lock-symbol">
+                    🔒
+                </div>
+
+                <div class="card-number">
+                    08
+                </div>
+
+                <div class="card-content">
+
+                    <span>
+                        DO NOT OPEN
+                    </span>
+
+                    <h3>
+                        2027
+                    </h3>
+
+                    <p>
+                        Next time malli ra…
+                    </p>
+
+                    <button disabled>
+                        INKA LOCKED 🔒
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- 09 CHAOS -->
+            <article class="archive-card emotional-card">
+                <div class="card-number">09</div>
+                <div class="card-content">
+                    <span>THE CHAOS ARCHIVE</span>
+                    <h3>Mana Pichi Panulu</h3>
+                    <p>Mana jokes, mana fights, mana nonsense…<br>
+                        bayata vallaki artham kaani,<br>
+                        manaki maatram moments.</p>
+                    <button class="open-card" onclick="openSection('chaos')">Open Chaos →</button>
+                </div>
+            </article>
+
+            <!-- 10 OPEN WHEN -->
+            <article class="archive-card emotional-card">
+                <div class="card-number">10</div>
+                <div class="card-content">
+                    <span>PRIVATE LETTERS</span>
+                    <h3>Eppudu Open Cheyyalante…</h3>
+                    <p>Konni rojulu happy ga untayi…<br>
+                        konni rojulu konchem tough ga untayi.<br>
+                        Aa days kosam konni maatlu.</p>
+                    <button class="open-card" onclick="openSection('openWhen')">OPEN ENVELOPE →</button>
+                </div>
+            </article>
+
+            <!-- 11 UNSAID -->
+            <article class="archive-card emotional-card">
+                <div class="card-number">11</div>
+                <div class="card-content">
+                    <span>THINGS I NEVER SAY</span>
+                    <h3>Unsaid Things</h3>
+                    <p>Konni feelings face-to-face cheppadam kanna…<br>
+                        paper meeda raayadam different ga anipisthundi Annaya.</p>
+                    <button class="open-card" onclick="openSection('unsaid')">Idi Chaduvu →</button>
+                </div>
+            </article>
+
+            <!-- 12 FINAL LETTER -->
+            <article class="archive-card emotional-card final-card">
+                <div class="card-number">12</div>
+                <div class="card-content">
+                    <span>BEFORE YOU LEAVE…</span>
+                    <h3>Letter</h3>
+                    <p>Last ga okkate gurthupettuko…<br>
+                        mana memories ekkada unna,<br>
+                        mana relation ki oka different idhi untundi Annaya.</p>
+                    <button class="open-card" onclick="openSection('finalLetter')">Open Cheyyi →</button>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+     STORY SECTION
+================================================= -->
+
+        <section id="storySection" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('storySection')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <div class="section-intro">
+                <span class="small-text">01 / TIMELINE</span>
+
+                <h2>
+                    Our <em>Story.</em>
+                </h2>
+
+                <p>
+                    Almost four years… ayina, mana story ki proper beginning ani cheppadaniki oka particular vishyam
+                    ledu.
+                </p>
+            </div>
+
+            <div class="chapter-photo" aria-label="Chapter 01 memory">
+                <img src="images/a18.jpg" alt="Chapter 01 temple trip memory">
+                <p> THAT DAY — 30 JUL 2022.<br>
+                    First lo mana iddaram ki teliyadu kada… ee random conversations anni oka roju memories avuthayi
+                    ani🤷‍♀️.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <span>CHAPTER 02</span>
+                <h3>Mana Chaos.</h3>
+                <p>
+                    Mana jokes, mana fights, random conversations, godavalu… appudu avi just normal days. Ippudu venakki
+                    chusthe avi anni chala pedha memories.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <span>CHAPTER 03</span>
+                <h3>Almost four years later.</h3>
+                <p>
+                    Time chala fast ga vellipoyindi. Kaani inka complete kaaledu.<br>
+                    Inka chaala memories create cheyyali Annaya.
+                </p>
+            </div>
+            <div class="chapter-photo" aria-label="Chapter 04 memory">
+                <img src="images/a19.jpeg"
+                    alt="Chapter 04 memory together at the temple">
+                <p>Idi ending kaadhu Annaya.<br>
+                Already raasina chapters konni unnayi… migatha story inka mana mundhe undi.SOMEWHERE ALONG THE WAY</p>
+            </div>
+            </div>
+
+        </section>
+
+        <!-- =================================================
+     Nee World — Nee lens nunchi
+================================================= -->
+
+        <section id="photos" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('photos')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <p class="small-text">
+                CHAPTER 02
+            </p>
+
+            <h2>
+                Nee World — Through Your <em>Lens.</em>
+            </h2>
+
+            <p class="section-intro">
+                Nuvvu just photographs theeyavu.<br>
+                Konni moments ni notice chesthav… konni feelings ni capture chesthav… migatha vallaki ordinary ga
+                kanipinche things lo kuda oka frame chusthav.
+            </p>
+
+
+            <div class="photo-gallery">
+
+                <div class="gallery-item">
+
+                    <img src="images/c1.jpg">
+
+                    <div>
+                        FRAME 01
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img src="c2.jpg">
+
+                    <div>
+                        FRAME 02
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img src="c3.jpg">
+
+                    <div>
+                        FRAME 03
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+     21 THINGS
+================================================= -->
+
+        <section id="things" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('things')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <p class="small-text">
+                CHAPTER 03
+            </p>
+
+            <h2>
+                21 Things That Make You… You<br>
+                <em>About You.</em>
+            </h2>
+
+            <div class="things-grid">
+
+                <div class="thing">
+                    <span>01</span>
+                    <p>Nannu yedipinchadam lo niku chala istame kadha Annaya.</p>
+                </div>
+
+                <div class="thing">
+                    <span>02</span>
+                    <p>Nenu serious ga unna kuda somehow navvinchesthav.</p>
+                </div>
+
+                <div class="thing">
+                    <span>03</span>
+                    <p>Camera tho chuse nee way chaala different.</p>
+                </div>
+
+                <div class="thing">
+                    <span>04</span>
+                    <p>Vere vallaki kanipinchani details nuvvu notice chesthav.</p>
+                </div>
+
+                <div class="thing">
+                    <span>05</span>
+                    <p>Ordinary moments ni kuda memory ga marchesthav.</p>
+                </div>
+
+                <div class="thing">
+                    <span>06</span>
+                    <p>Nee dreams ni serious ga teesukuntav.</p>
+                </div>
+
+                <div class="thing">
+                    <span>07</span>
+                    <p>Nee lens… just lens kaadhu. Adi nee way of seeing the world.</p>
+                </div>
+
+                <div class="thing">
+                    <span>08</span>
+                    <p>Nuvvu unte life different ga untundi Annaya.</p>
+                </div>
+
+                <div class="thing">
+                    <span>09</span>
+                    <p>Konni sarlu chiraku ga untav. 😂</p>
+                </div>
+
+                <div class="thing">
+                    <span>10</span>
+                    <p>Kaani ninnu vere vallatho replace cheyyanu.</p>
+                </div>
+
+                <div class="thing">
+                    <span>11</span>
+                    <p>Nee own way of seeing the world undi.</p>
+                </div>
+
+                <div class="thing">
+                    <span>12</span>
+                    <p>Nuvvu inka nannu ala care chesthune untav.</p>
+                </div>
+
+                <div class="thing">
+                    <span>13</span>
+                    <p>Planning lekunda create ayye memories manaki ekkuva.</p>
+                </div>
+
+                <div class="thing">
+                    <span>14</span>
+                    <p>Nuvvu anukunnadanikanna nilo potential chaala ekkuva Annaya kani niku adhi teliyatle.</p>
+                </div>
+
+                <div class="thing">
+                    <span>15</span>
+                    <p>Nee dreams nijam avvali ani true ga korukuntunna.</p>
+                </div>
+
+                <div class="thing">
+                    <span>16</span>
+                    <p>Nuvvu Different Annaya.</p>
+                </div>
+
+                <div class="thing">
+                    <span>17</span>
+                    <p>Nuvvu family ni iche value kuda veru Annaya.</p>
+                </div>
+
+                <div class="thing">
+                    <span>18</span>
+                    <p>Nee story inka chaala pedda ga undi.</p>
+                </div>
+
+                <div class="thing">
+                    <span>19</span>
+                    <p>Nuvvu inka grow avuthunnav… and that's beautiful to watch.</p>
+                </div>
+
+                <div class="thing">
+                    <span>20</span>
+                    <p>Nuvvu avarki ivalsina value priority valaki isthav Annaya.</p>
+                </div>
+
+                <div class="thing final-thing">
+                    <span>21</span>
+                    <p>
+                        Nuvvu chese chaala things ni nuvvu notice cheyyakapoyina… nenu notice chestha.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+     VIDEO
+================================================= -->
+
+        <section id="video" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('video')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <p class="small-text">
+                CHAPTER 04
+            </p>
+
+            <h2>
+                Memories in <em>Motion.</em>
+            </h2>
+
+            <div class="big-video">
+
+                <video controls>
+
+                    <source src="video/memories.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+     MULTIVERSE
+================================================= -->
+
+        <section id="multiverse" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('multiverse')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <p class="small-text">
+                CHAPTER 06
+            </p>
+
+            <h2>
+                The <em>Multiverse.</em>
+            </h2>
+
+            <p class="section-intro">
+                Oka vela mana lives different ga unte?<br>
+                Different city. Different career. Different people. Different story.
+            </p>
+
+            <div class="universe-grid">
+
+                <div>
+                    <span>UNIVERSE 01</span>
+                    <h3>THE PHOTOGRAPHER</h3>
+                    <p>
+                        Camera tho moments ni chase chesthu… finally nee dream ni live chesthunnav.
+                    </p>
+                </div>
+
+                <div>
+                    <span>UNIVERSE 02</span>
+                    <h3>THE TRAVELLER</h3>
+                    <p>
+                        Oka place nunchi inko place ki velthu… every location lo oka new story kanipisthav.
+                    </p>
+                </div>
+
+                <div>
+                    <span>UNIVERSE 03</span>
+                    <h3>THE FILMMAKER</h3>
+                    <p>
+                        Photos nunchi movie stories varaku… moments ni cinema laga capture chesthav.
+                    </p>
+                </div>
+
+                <div>
+                    <span>UNIVERSE 04</span>
+                    <h3>THE EXPLORER</h3>
+                    <p>
+                        Next frame ekkada untundo teliyadu… kaani search cheyyadam aapavu.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+     FUTURE
+================================================= -->
+
+        <section id="future" class="extra-section future-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('future')">
+                ← BACK TO ARCHIVE
+            </button>
+
+            <div class="future-header">
+
+                <p class="small-text">
+                    CLASSIFIED FILE / 2036
+                </p>
+
+                <h2>
+                    10 Years<br>
+                    From <em>Now.</em>
+                </h2>
+
+                <p>
+                    This file was created in 2026.<br>
+                    Open chesedi 2036 lo or inka mundhu ayina avvachu.
+                </p>
+
+            </div>
+
+
+            <div class="future-profile">
+
+                <div class="future-year">
+                    2036
+                </div>
+
+                <div>
+
+                    <span>
+                        VAMSI
+                    </span>
+
+                    <h3>
+                        PHOTOGRAPHER
+                    </h3>
+
+                    <p>
+                        MNC • CREATIVE VISUALS
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="future-letter">
+
+                <p>
+                    Annaya,
+                </p>
+
+                <p>
+                    10 years tarvatha ee page chusthunnaav ante… first of all, hello future Annaya. 😂
+                </p>
+
+                <p>
+                    Maybe oka office lo nee dream job chesthu untav.
+                </p>
+
+                <p>
+                    Maybe somewhere beautiful, camera hand lo pattukuni next perfect frame kosam wait chesthu untav.
+                </p>
+
+                <p>
+                    Maybe thousands of stories already capture chesi untav.
+                </p>
+
+                <p>
+                    Kaani okati matram marchipoku.<br>
+                    Nee dream start ayina reason ni marchipoku.
+                </p>
+
+                <p class="highlight">
+                    Different ga choodadam aapaku.
+                </p>
+
+                <p class="highlight">
+                    Perfect frame kosam chase cheyyadam aapaku.
+                </p>
+
+                <p class="highlight">
+                    And most importantly…<br>
+                    Nuvvu avvali anukunna person ga ayyinantha varuku aapaku.
+                </p>
+
+                <p>
+                    I'll always be somewhere cheering for you.
+                </p>
+
+                <div class="future-signature">
+                    — Srivalli
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+     CHAOS ARCHIVE
+================================================= -->
+        <section id="chaos" class="extra-section hidden emotional-section">
+            <button type="button" class="back-btn" onclick="closeSection('chaos')">← BACK TO ARCHIVE</button>
+            <div class="section-intro">
+                <span class="small-text">09 / THE CHAOS ARCHIVE</span>
+                <h2>Things that make <em>no sense.</em></h2>
+                <p>Bayata vallaki idi just nonsense.<br>
+                    Manaki?<br>
+                    Core memories. 😂</p>
+            </div>
+            <div class="memory-notes">
+                <article><span>01</span>
+                    <h3>THE INSIDE JOKES</h3>
+                    <p>Explain cheyyalsina avasaram leni jokes.<br>
+                        Oka word chaalu… iddaram navvukovadaniki.</p>
+                </article>
+                <article><span>02</span>
+                    <h3>THE RANDOM FIGHTS</h3>
+                    <p>5 minutes argument.<br>
+                        10 minutes later…<br>
+                        “Em jaragaledhu” ani normal ga matladukovadam. 😂</p>
+                </article>
+                <article><span>03</span>
+                    <h3>THE STUPID MOMENTS</h3>
+                    <p>Appudu stupid anipinchina moments…<br>
+                        Ippudu gurthosthe automatic ga navvu vachche moments.</p>
+                </article>
+                <article><span>04</span>
+                    <h3>THE ORDINARY DAYS</h3>
+                    <p>Maybe mana best memories special days lo kaadhu.<br>
+                        Just normal days lo jarigina chinna chinna things lo unnayi.<br>
+                        That's our kind of chaos. ❤️</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================================================
+     OPEN WHEN
+================================================= -->
+        <section id="openWhen" class="extra-section hidden emotional-section">
+            <button type="button" class="back-btn" onclick="closeSection('openWhen')">← BACK TO ARCHIVE</button>
+            <div class="section-intro">
+                <span class="small-text">10 / PRIVATE LETTERS</span>
+                <h2>Open <em>when...</em></h2>
+                <p>Anni okesari open cheyyaku.<br>
+                    Konni letters future kosam save cheyyi. ❤️</p>
+            </div>
+            <div class="envelope-grid">
+                <button class="envelope" onclick="toggleEnvelope(this)"><span>OPEN WHEN</span><strong>YOU'RE HAVING A
+                        BAD DAY</strong>
+                    <p>Every day strong ga undalsina avasaram ledu Annaya.<br>
+                        Bad day ante bad life kaadhu.<br>
+                        Konchem time teesko.<br>
+                        Tomorrow malli try cheyyachu.</p>
+                </button>
+                <button class="envelope" onclick="toggleEnvelope(this)"><span>OPEN WHEN</span><strong>YOU MISS
+                        ME</strong>
+                    <p>Phone lo message cheyyachu… but first, ee page chudu. 😂<br>
+                        Consider this a tiny hug from your sister.</p>
+                </button>
+                <button class="envelope" onclick="toggleEnvelope(this)"><span>OPEN WHEN</span><strong>YOU NEED TO
+                        LAUGH</strong>
+                    <p>Remember one thing…<br>
+                        Nannu sister ga vundi kuda unav ante, nee life already successful. 😂</p>
+                </button>
+                <button class="envelope" onclick="toggleEnvelope(this)"><span>OPEN WHEN</span><strong>YOU FORGET HOW
+                        MUCH YOU MATTER</strong>
+                    <p>Nuvvu anukunnadanikanna chaala important.<br>
+                        And yes… nenu cheppakapoyina, I care about you more than you know.</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- =================================================
+     UNSAID THINGS
+================================================= -->
+        <section id="unsaid" class="extra-section hidden emotional-section unsaid-section">
+            <button type="button" class="back-btn" onclick="closeSection('unsaid')">← BACK TO ARCHIVE</button>
+            <div class="section-intro">
+                <span class="small-text">11 / THINGS I NEVER SAY</span>
+                <h2>Things I <em>don't say enough.</em></h2>
+            </div>
+            <div class="unsaid-letter">
+                <p>Annaya,<br><br>I don't say it enough… but I'm proud of you.</p>
+                <p>Nuvvu nannu almost irritate chesthav. 😂<br>
+                    Kaani somehow… every single time, I'd still choose you as my brother.</p>
+                <p>Thank you for growing up with me.</p>
+                <p>Thank you for all those ordinary days… avi memories avuthunnayi ani appudu manaki teliyaledu.</p>
+                <p>Nee camera dream ni chase chesthu undu.<br>
+                    One day nenu “I knew you could do it” ani cheppali.</p>
+                <p class="highlight">And no matter how old we get…<br>
+                    Mana childhood, mana stupid jokes, mana fights, mana memories lo oka little piece of us always
+                    untundi.</p>
+                <div class="future-signature">— Srivalli</div>
+            </div>
+        </section>
+
+        <!-- =================================================
+     FINAL LETTER
+================================================= -->
+        <section id="finalLetter" class="extra-section hidden final-letter-section">
+            <button type="button" class="back-btn" onclick="closeSection('finalLetter')">← BACK TO ARCHIVE</button>
+            <div class="final-letter-wrap">
+                <span class="small-text">12 / THE FINAL LETTER</span>
+                <h2>Out of all the people life could have given me…</h2>
+                <p class="final-highlight">I'm glad I got you.</p>
+                <p>Whatever happens next…<br>
+                    Life manalni different directions lo teesukellina, busy ayina, years pass ayina…<br>
+                    I hope we never become strangers.</p>
+                <p>Keep taking photographs.<br>
+                    Keep finding beautiful things.<br>
+                    Keep chasing the life you want.</p>
+                <p>And one day life chaala busy ayyi photos theeyadam kuda marchipothe…<br>
+                    at least aa moments ela feel ayyayo marchipokunda undam.<br><br>
+                    Because photos may fade…<br>
+                    but some memories don't.</p>
+                <div class="final-signature">— Yours ❤️</div>
+                <div class="final-end">THE END? <span>Probably not.</span></div>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+     END
+================================================= -->
+
+
+        <section class="vault-stats" aria-label="Memory Vault statistics">
+            <div class="vault-stat"><span>12</span><small>ARCHIVES</small></div>
+            <div class="vault-stat"><span>21</span><small>YEARS OF YOU</small></div>
+            <div class="vault-stat"><span>2022 → ∞</span><small>STORY STILL WRITING</small></div>
+        </section>
+
+        <section class="random-memory-wrap">
+            <div class="random-memory-label">THE VAULT REMEMBERS…</div>
+            <div class="random-memory" id="randomMemory">Konni ordinary days… later memories aipoyayi.</div>
+            <button class="memory-btn" id="randomMemoryBtn">Inka →</button>
+        </section>
+
+        <section class="archive-x" id="archiveX">
+            <p class="small-text">CLASSIFIED / ARCHIVE X</p>
+            <h3>One More Thing…</h3>
+            <p>Kani konni memories ki names avasaram ledu Annaya.</p>
+            <button id="archiveXBtn">OPEN CHEY→</button>
+            <div class="archive-x-message">
+                You found it. ❤️<br><br>
+                ikada ami secret kadhu kani .<br>
+                Ee pages ni ala mana memories tho add chesukuntu undham Annaya kk na<br><br>
+                <em>Inka rayalsina memories chala unnayi Annaya.</em>
+            </div>
+        </section>
+
+        <section class="vault-close">
+            <p class="small-text">THE VAULT IS NEVER REALLY CLOSED</p>
+            <h2>Come back when we have<br><em>another memory worth saving.</em></h2>
+            <p>Already written chapters are safe here.<br>New ones can always be added.</p>
+        </section>
+
+        <section class="archive-ending">
+
+            <p class="small-text">
+                BEFORE YOU LEAVE…
+            </p>
+
+            <h2>
+                Mana memories lo oka<br>
+                <em>favorite chapter nuvve.</em>
+            </h2>
+
+            <p>
+                ❤️💙
+            </p>
+
+            <div class="signature">
+                — valli
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <span>
+                THE MEMORY VAULT
+            </span>
+
+            <span>
+                / 2026
+            </span>
+
+        </footer>
+
+    </main>
+
+
+
+    <style id="memory-vault-emotional-enhancements">
+        .vault-stats {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding: 18px 22px;
+            border-top: 1px solid rgba(238, 233, 223, .10);
+            border-bottom: 1px solid rgba(238, 233, 223, .10);
+            display: flex;
+            justify-content: center;
+            gap: 38px;
+            flex-wrap: wrap;
+            text-align: center
+        }
+
+        .vault-stat span {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 2px
+        }
+
+        .vault-stat small {
+            display: block;
+            margin-top: 6px;
+            color: #77736c;
+            font-size: 8px;
+            letter-spacing: 1.5px
+        }
+
+        .random-memory-wrap {
+            max-width: 900px;
+            margin: 75px auto 30px;
+            text-align: center
+        }
+
+        .random-memory-label {
+            color: var(--gold);
+            font-size: 9px;
+            letter-spacing: 4px
+        }
+
+        .random-memory {
+            min-height: 95px;
+            margin: 22px auto 25px;
+            padding: 25px;
+            border: 1px solid rgba(238, 233, 223, .10);
+            background: rgba(255, 255, 255, .018);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b9b3aa;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 22px;
+            line-height: 1.45;
+            transition: opacity .25s ease, transform .25s ease
+        }
+
+        .memory-btn {
+            padding: 13px 22px;
+            border: 1px solid rgba(200, 170, 114, .45);
+            color: var(--gold-light);
+            font-size: 9px;
+            letter-spacing: 2px;
+            transition: .3s ease
+        }
+
+        .memory-btn:hover {
+            background: rgba(200, 170, 114, .08);
+            transform: translateY(-2px)
+        }
+
+        .vault-whisper {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            transform: translate(-50%, 20px);
+            width: min(520px, calc(100% - 30px));
+            padding: 18px 22px;
+            background: rgba(10, 10, 10, .94);
+            border: 1px solid rgba(200, 170, 114, .28);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, .45);
+            text-align: center;
+            z-index: 1200;
+            opacity: 0;
+            pointer-events: none;
+            transition: .45s ease
+        }
+
+        .vault-whisper.show {
+            opacity: 1;
+            transform: translate(-50%, 0)
+        }
+
+        .vault-whisper strong {
+            display: block;
+            color: var(--gold);
+            font-size: 8px;
+            letter-spacing: 3px;
+            margin-bottom: 8px
+        }
+
+        .vault-whisper span {
+            color: #b8b2a9;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 17px
+        }
+
+        .archive-x {
+            max-width: 900px;
+            margin: 75px auto 0;
+            padding: 30px;
+            border: 1px solid rgba(200, 170, 114, .12);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(200, 170, 114, .025), rgba(0, 0, 0, 0))
+        }
+
+        .archive-x .small-text {
+            color: #6f6a63
+        }
+
+        .archive-x h3 {
+            margin: 12px 0;
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 32px;
+            font-weight: 400
+        }
+
+        .archive-x p {
+            color: #8d8981;
+            font-size: 11px;
+            line-height: 1.8;
+            margin-bottom: 20px
+        }
+
+        .archive-x button {
+            padding: 12px 20px;
+            border: 1px solid rgba(238, 233, 223, .16);
+            font-size: 8px;
+            letter-spacing: 2px;
+            color: #aaa49b
+        }
+
+        .archive-x-message {
+            display: none;
+            margin-top: 22px;
+            padding: 22px;
+            border-top: 1px solid rgba(238, 233, 223, .08);
+            color: #bdb7ae;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 20px;
+            line-height: 1.5
+        }
+
+        .archive-x.opened .archive-x-message {
+            display: block
+        }
+
+        .vault-close {
+            padding: 90px 20px 50px;
+            text-align: center
+        }
+
+        .vault-close .small-text {
+            color: var(--gold);
+            letter-spacing: 4px
+        }
+
+        .vault-close h2 {
+            margin: 20px auto;
+            max-width: 700px;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 300;
+            line-height: 1
+        }
+
+        .vault-close p {
+            color: #77736c;
+            font-size: 11px;
+            line-height: 1.9
+        }
+
+        .vault-close em {
+            color: var(--gold-light)
+        }
+    </style>
+    <div class="vault-whisper" id="vaultWhisper"><strong>THE VAULT REMEMBERS…</strong><span
+            id="vaultWhisperText"></span></div>
+
+    <script>
+        (function () {
+            const randomMemory = document.getElementById("randomMemory");
+            const randomMemoryBtn = document.getElementById("randomMemoryBtn");
+            const memories = [
+                "Konni moments marchipovadaniki kaadhu… life anthaa gurthundipovadaniki Annaya.",
+                "Mana jokes, mana fights, mana pichi… bayata vallaki ardham kaani, manaki maatrame ardham ayye moments.",
+                "Ordinary moments ni kuda memory ga marchukundam",
+                "Maybe mana best memories special days lo kaadhu… normal days lo jarigina chinna chinna vishyalo lo untayi.",
+                "Nuvvu naku kopam tepisthav. 😂 Kaani somehow… every single time, I'd still choose you as my Annaya.",
+                "Nuvvu chese chala vishyalani ni nuvvu notice cheyyakapoyina… nenu notice chestha Annaya👀.",
+                "Idi ending kaadhu Annaya. Inka chaala memories create chesukundham.",
+                "Photos may fade… but some memories don't but even photos stay ♾️."
+            ];
+            if (randomMemory && randomMemoryBtn) {
+                randomMemoryBtn.addEventListener("click", function () {
+                    randomMemory.style.opacity = "0";
+                    randomMemory.style.transform = "translateY(6px)";
+                    setTimeout(function () {
+                        let next = memories[Math.floor(Math.random() * memories.length)];
+                        while (memories.length > 1 && next === randomMemory.textContent.trim()) {
+                            next = memories[Math.floor(Math.random() * memories.length)];
+                        }
+                        randomMemory.textContent = next;
+                        randomMemory.style.opacity = "1";
+                        randomMemory.style.transform = "translateY(0)";
+                    }, 220);
+                });
+            }
+
+            const whisper = document.getElementById("vaultWhisper");
+            const whisperText = document.getElementById("vaultWhisperText");
+            const whisperMessages = [
+                "Manam appudu just moment ni create chesukuntune undham. ",
+                "Some ordinary days deserve a permanent place here.",
+                "Ee website lo unna prati word has my emotion Annaya.",
+                "The story is already beautiful. It just isn't finished yet.",
+                "One day, you'll look back and realize how much changed… and how much stayed the same."
+            ];
+            let shown = false, timer;
+            function showWhisper() {
+                if (!whisper || !whisperText) return;
+                whisperText.textContent = whisperMessages[Math.floor(Math.random() * whisperMessages.length)];
+                whisper.classList.add("show");
+                clearTimeout(timer);
+                timer = setTimeout(() => whisper.classList.remove("show"), 4200);
+            }
+            window.addEventListener("scroll", function () {
+                if (!shown && window.scrollY > 420) { shown = true; showWhisper(); }
+            }, { passive: true });
+
+            const archiveX = document.getElementById("archiveX");
+            const archiveXBtn = document.getElementById("archiveXBtn");
+            if (archiveX && archiveXBtn) {
+                archiveXBtn.addEventListener("click", function () {
+                    archiveX.classList.toggle("opened");
+                    archiveXBtn.textContent = archiveX.classList.contains("opened") ? "CLOSE ARCHIVE X" : "TRY TO OPEN →";
+                });
+            }
+        })();
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
