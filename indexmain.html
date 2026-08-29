@@ -15,6 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -235,7 +238,7 @@
 
                 <div class="photo-background">
 
-                    <img src="images/c1.jpg" alt="Vamsi photography">
+                    <img src="images/a8.jpeg" alt="Vamsi photography">
 
                 </div>
 
@@ -301,39 +304,38 @@
 
             <article class="archive-card video-card">
 
-                <video autoplay muted loop playsinline>
+                <div class="snap-card-background">
 
-                    <source src="video/memories.mp4" type="video/mp4">
-
-                </video>
-
-                <div class="video-overlay"></div>
-
-                <div class="card-number">
-                    04
-                </div>
-
-                <div class="card-content">
-
-                    <span>MEMORIES IN MOTION</span>
-
-                    <h3>
-                        Press Play
-                    </h3>
-
-                    <p>
-                        Konni memories photo lo kanna…<br>
-                        kadilthe inka bhaguntay Annaya.
-                    </p>
-
-                    <button class="open-card" onclick="openSection('video')">
-                        WATCH →
-                    </button>
+                    <img src="images/s34.jpeg" alt="Memories in Motion">
 
                 </div>
+                < div class="video-overlay">
+                    </div>
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>MEMORIES IN MOTION</span>
+
+                        <h3>
+                            Mana snaps
+                        </h3>
+
+                        <p>
+                            Konni memories photo lo kanna…<br>
+                            kadilthe inka bhaguntay Annaya.
+                        </p>
+
+                        <button class="open-card" onclick="openSection('video')">
+                            WATCH →
+                        </button>
+
+                    </div>
 
             </article>
-
 
             <!-- 05 MESSAGE -->
 
@@ -352,16 +354,46 @@
                     </h3>
 
                     <p>
-                        Something I wanted you to hear.
+                        Konni maatlu… direct ga cheppaleni vi.
                     </p>
 
-                    <button id="voiceBtn">
-                        ▶ PLAY MESSAGE
-                    </button>
 
-                    <audio id="voiceMessage">
-                        <source src="audio/message.mp3" type="audio/mpeg">
-                    </audio>
+                    <!-- MESSAGE 01 -->
+
+                    <div class="voice-message">
+
+                        <small>
+                            MESSAGE 01
+                        </small>
+
+                        <button class="voice-play" data-audio="message1">
+                            ▶ PLAY MESSAGE
+                        </button>
+
+                        <audio id="message1">
+                            <source src="audio/message1.ogg" type="audio/ogg">
+                        </audio>
+
+                    </div>
+
+
+                    <!-- MESSAGE 02 -->
+
+                    <div class="voice-message">
+
+                        <small>
+                            MESSAGE 02
+                        </small>
+
+                        <button class="voice-play" data-audio="message2">
+                            ▶ PLAY MESSAGE
+                        </button>
+
+                        <audio id="message2">
+                            <source src="audio/message2.ogg" type="audio/ogg">
+                        </audio>
+
+                    </div>
 
                 </div>
 
@@ -515,7 +547,69 @@
                     <button class="open-card" onclick="openSection('finalLetter')">Open Cheyyi →</button>
                 </div>
             </article>
+            <!-- 13 QUESTIONNAIRE -->
 
+            <article class="archive-card questionnaire-card">
+
+                <div class="card-number">
+                    13
+                </div>
+
+                <div class="card-content">
+
+                    <span>
+                        MANA MEMORIES, NEE WORDS LO
+                    </span>
+
+                    <h3>
+                        Your Words.
+                    </h3>
+
+                    <p>
+                        Few questions.<br>
+                        No Google. No cheating.<br>
+                        Just niku nakosam am telusu anthe 👀
+                    </p>
+
+                    <button class="open-card" onclick="window.location.href='mana-memories-nee-words-lo.html'">
+
+                        OPEN QUESTIONNAIRE →
+
+                    </button>
+
+                </div>
+
+            </article>
+            <!-- 14 QUESTIONNAIRE RESPONSES -->
+
+            <article class="archive-card response-card">
+
+                <div class="card-number">
+                    14
+                </div>
+
+                <div class="card-content">
+
+                    <span>
+                        MANA MEMORIES, NEE WORDS LO
+                    </span>
+
+                    <h3>
+                        The Answers You Left.
+                    </h3>
+
+                    <p>
+                        Few questions.<br>
+                        miku na kosam antha teluso 👀.
+                    </p>
+
+                    <button class="open-card" type="button" onclick="openSection('responses')">
+                        READ THE RESPONSES →
+                    </button>
+
+                </div>
+
+            </article>
         </section>
 
 
@@ -529,22 +623,18 @@
                 ← BACK TO ARCHIVE
             </button>
 
-            <div class="section-intro">
-                <span class="small-text">01 / TIMELINE</span>
+            <div class="timeline-item">
+                <span>CHAPTER 01</span>
 
-                <h2>
-                    Our <em>Story.</em>
-                </h2>
+                <h3>Our <em>Story.</em></h3>
 
                 <p>
                     Almost four years… ayina, mana story ki proper beginning ani cheppadaniki oka particular vishyam
                     ledu.
                 </p>
-            </div>
 
-            <div class="chapter-photo" aria-label="Chapter 01 memory">
-                <img src="images/a18.jpg" alt="Chapter 01 temple trip memory">
-                <p> THAT DAY — 30 JUL 2022.<br>
+                <p>
+                    THAT DAY — 30 JUL 2022.<br>
                     First lo mana iddaram ki teliyadu kada… ee random conversations anni oka roju memories avuthayi
                     ani🤷‍♀️.
                 </p>
@@ -567,18 +657,20 @@
                     Inka chaala memories create cheyyali Annaya.
                 </p>
             </div>
-            <div class="chapter-photo" aria-label="Chapter 04 memory">
-                <img src="images/a19.jpeg"
-                    alt="Chapter 04 memory together at the temple">
-                <p>Idi ending kaadhu Annaya.<br>
-                Already raasina chapters konni unnayi… migatha story inka mana mundhe undi.SOMEWHERE ALONG THE WAY</p>
-            </div>
+            <div class="timeline-item">
+                <span>CHAPTER 04</span>
+                <h3>Our <em>Forever.</em></h3>
+                <p>
+                    Idi ending kaadhu Annaya.<br>
+                    Already raasina chapters konni unnayi… migatha story inka mana mundhe undi.
+                    SOMEWHERE ALONG THE WAY
+                </p>
             </div>
 
         </section>
 
         <!-- =================================================
-     Nee World — Nee lens nunchi
+     CARD 02 — NEE WORLD
 ================================================= -->
 
         <section id="photos" class="extra-section hidden">
@@ -587,52 +679,580 @@
                 ← BACK TO ARCHIVE
             </button>
 
-            <p class="small-text">
-                CHAPTER 02
-            </p>
+            <div class="section-intro">
+                <span class="small-text">CHAPTER 02</span>
 
-            <h2>
-                Nee World — Through Your <em>Lens.</em>
-            </h2>
+                <h2>
+                    Nee World — Through Your <em>Lens.</em>
+                </h2>
 
-            <p class="section-intro">
-                Nuvvu just photographs theeyavu.<br>
-                Konni moments ni notice chesthav… konni feelings ni capture chesthav… migatha vallaki ordinary ga
-                kanipinche things lo kuda oka frame chusthav.
-            </p>
+                <p class="section-intro-text">
+                    Nuvvu just photographs theeyavu.<br>
+                    Konni moments ni notice chesthav… konni feelings ni capture chesthav…
+                    migatha vallaki ordinary ga kanipinche things lo kuda oka frame chusthav.
+                </p>
+            </div>
 
 
-            <div class="photo-gallery">
+            <!-- =========================
+         PHOTOS
+    ========================== -->
 
-                <div class="gallery-item">
+            <div class="card2-title">
+                <span>01 / HIS FRAMES</span>
+                <h3>Captured Moments.</h3>
+            </div>
 
-                    <img src="images/c1.jpg">
+            <div class="card2-photo-grid">
 
-                    <div>
-                        FRAME 01
+                <button class="card2-media" onclick="openPhoto('images/a1.jpeg')">
+                    <img src="images/a1.jpeg" alt="Vamsi photo 1">
+                    <span>01</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a2.jpeg')">
+                    <img src="images/a2.jpeg" alt="Vamsi photo 2">
+                    <span>02</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a3.jpeg')">
+                    <img src="images/a3.jpeg" alt="Vamsi photo 3">
+                    <span>03</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a4.jpeg')">
+                    <img src="images/a4.jpeg" alt="Vamsi photo 4">
+                    <span>04</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a5.jpeg')">
+                    <img src="images/a5.jpeg" alt="Vamsi photo 5">
+                    <span>05</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a6.jpeg')">
+                    <img src="images/a6.jpeg" alt="Vamsi photo 6">
+                    <span>06</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a7.jpeg')">
+                    <img src="images/a7.jpeg" alt="Vamsi photo 7">
+                    <span>07</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a8.jpeg')">
+                    <img src="images/a8.jpeg" alt="Vamsi photo 8">
+                    <span>08</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a9.jpeg')">
+                    <img src="images/a9.jpeg" alt="Vamsi photo 9">
+                    <span>09</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a10.jpeg')">
+                    <img src="images/a10.jpeg" alt="Vamsi photo 10">
+                    <span>10</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a11.jpeg')">
+                    <img src="images/a11.jpeg" alt="Vamsi photo 11">
+                    <span>11</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a12.jpeg')">
+                    <img src="images/a12.jpeg" alt="Vamsi photo 12">
+                    <span>12</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a13.jpeg')">
+                    <img src="images/a13.jpeg" alt="Vamsi photo 13">
+                    <span>13</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a14.jpeg')">
+                    <img src="images/a14.jpeg" alt="Vamsi photo 14">
+                    <span>14</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a15.jpeg')">
+                    <img src="images/a15.jpeg" alt="Vamsi photo 15">
+                    <span>15</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a16.jpeg')">
+                    <img src="images/a16.jpeg" alt="Vamsi photo 16">
+                    <span>16</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a17.jpeg')">
+                    <img src="images/a17.jpeg" alt="Vamsi photo 17">
+                    <span>17</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a18.jpeg')">
+                    <img src="images/a18.jpeg" alt="Vamsi photo 18">
+                    <span>18</span>
+                </button>
+
+                <button class="card2-media" onclick="openPhoto('images/a19.jpeg')">
+                    <img src="images/a19.jpeg" alt="Vamsi photo 19">
+                    <span>19</span>
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+         SOCIALS
+    ========================== -->
+
+            <div class="card2-socials">
+
+                <div class="card2-title">
+                    <span>02 / FIND HIM</span>
+                    <h3>Beyond The Frame.</h3>
+                </div>
+
+                <div class="card2-social-grid">
+
+                    <a class="card2-social instagram" href="https://www.instagram.com/hey__tony__.01/" target="_blank"
+                        rel="noopener noreferrer">
+
+                        <div>
+                            <small>INSTAGRAM</small>
+                            <strong>@hey__tony__.01</strong>
+                        </div>
+
+                        <span>VIEW PROFILE ↗</span>
+
+                    </a>
+
+
+                    <div class="card2-social snapchat coming-soon">
+
+                        <div>
+                            <small>SNAPCHAT</small>
+                            <strong>Coming Soon</strong>
+                        </div>
+
+                        <span>ADDING LATER</span>
+
                     </div>
 
                 </div>
 
+            </div>
 
-                <div class="gallery-item">
 
-                    <img src="c2.jpg">
+            <!-- =========================
+         REELS
+    ========================== -->
+            <div class="card2-reels">
 
-                    <div>
-                        FRAME 02
-                    </div>
-
+                <div class="card2-media-heading card2-reels-heading">
+                    <span>03 / REELS</span>
+                    <div></div>
                 </div>
 
+                <h3 class="card2-reels-title">
+                    His Moments In Motion.
+                </h3>
 
-                <div class="gallery-item">
+                <!-- ONE GRID -->
+                <div class="card2-reel-grid">
 
-                    <img src="c3.jpg">
+                    <button class="card2-reel" onclick="openReel('videos/annaya1.mp4')">
 
-                    <div>
-                        FRAME 03
-                    </div>
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya1.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 01</span>
+
+                    </button>
+
+                    <button class="card2-reel" onclick="openReel('videos/annaya2.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya2.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 02</span>
+
+                    </button>
+
+                    <button class="card2-reel" onclick="openReel('videos/annaya3.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya3.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 03</span>
+                        <button class="card2-reel" onclick="openReel('videos/annaya4.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya4.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 04</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya5.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya5.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 05</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya6.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya6.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 06</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya7.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya7.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 07</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya8.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya8.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 08</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya9.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya9.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 09</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya10.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya10.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 10</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya11.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya11.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 11</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya12.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya12.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 12</span>
+
+                        </button>
+                        <button class="card2-reel" onclick="openReel('videos/annaya13.mp4')">
+
+                            <video muted playsinline preload="metadata">
+                                <source src="videos/annaya13.mp4" type="video/mp4">
+                            </video>
+
+                            <span>REEL 13</span>
+
+                        </button>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya14.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya14.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 14</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya15.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya15.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 15</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya16.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya16.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 16</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya17.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya17.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 17</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya18.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya18.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 18</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya19.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya19.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 19</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya20.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya20.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 20</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya21.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya21.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 21</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya22.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya22.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 22</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya23.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya23.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 23</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya24.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya24.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 24</span>
+
+                    </button>
+
+                    <button class="card2-reel" onclick="openReel('videos/annaya25.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya25.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 25</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya26.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya26.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 26</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya27.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya27.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 27</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya28.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya28.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 28</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya29.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya29.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 29</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya30.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya30.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 30</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya31.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya31.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 31</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya32.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya32.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 32</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya33.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya33.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 33</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya34.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya34.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 34</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya35.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya35.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 35</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya36.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya36.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 36</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya37.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya37.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 37</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya38.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya38.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 38</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya39.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya39.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 39</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya40.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya40.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 40</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya41.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya41.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 41</span>
+
+                    </button>
+
+                    <button class="card2-reel" onclick="openReel('videos/annaya42.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya42.mp4" type="video/mp4">
+                        </video>
+
+                        <span>REEL 42</span>
+
+                    </button>
+                    <button class="card2-reel" onclick="openReel('videos/annaya43.mp4')">
+
+                        <video muted playsinline preload="metadata">
+                            <source src="videos/annaya43.mp4" type="video/mp4">
+                        </video>
+
+                       <span>REEL 42</span>
+
+                    </button>
 
                 </div>
 
@@ -762,7 +1382,7 @@
                     <p>Nuvvu avarki ivalsina value priority valaki isthav Annaya.</p>
                 </div>
 
-                <div class="thing final-thing">
+                <div class="thing">
                     <span>21</span>
                     <p>
                         Nuvvu chese chaala things ni nuvvu notice cheyyakapoyina… nenu notice chestha.
@@ -784,21 +1404,510 @@
                 ← BACK TO ARCHIVE
             </button>
 
-            <p class="small-text">
-                CHAPTER 04
-            </p>
 
-            <h2>
-                Memories in <em>Motion.</em>
-            </h2>
+            <div class="section-intro">
 
-            <div class="big-video">
+                <span class="small-text">
+                    CHAPTER 04
+                </span>
 
-                <video controls>
+                <h2>
+                    Memories in <em>Motion.</em>
+                </h2>
 
-                    <source src="video/memories.mp4" type="video/mp4">
+                <p class="section-intro-text">
+                    Konni memories photo lo kanna…<br>
+                    kadilthe inka bhaguntay Annaya.
+                </p>
 
-                </video>
+            </div>
+
+
+            <!-- =================================================
+         SNAP MEMORIES
+    ================================================= -->
+
+            <div class="card2-title">
+
+                <span>01 / SNAP MEMORIES</span>
+
+                <h3>
+                    Mana Snaps.
+                </h3>
+
+            </div>
+
+
+            <div class="snap-memory-grid">
+
+
+                <!-- SNAP VIDEO -->
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s1.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s1.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 01
+                    </span>
+
+                </button>
+                <button type="button" class="snap-memory" onclick="openReel('videos/s2.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s2.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 23
+                    </span>
+
+                </button>
+
+
+
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s3.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s3.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 02
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s4.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s4.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 03
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s5.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s5.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 04
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s6.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s6.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 05
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s7.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s7.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 06
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s8.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s8.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 07
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s9.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s9.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 08
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s10.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s10.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 09
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s11.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s11.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 10
+                    </span>
+
+                </button>
+                <button type="button" class="snap-memory" onclick="openReel('videos/s12.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s12.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 11
+                    </span>
+
+                </button>
+                <button type="button" class="snap-memory" onclick="openReel('videos/s13.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s13.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 12
+                    </span>
+
+                </button>
+                <button type="button" class="snap-memory" onclick="openReel('videos/s14.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s14.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 13
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s15.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s15.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 14
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s16.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s16.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 15
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s17.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s17.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 16
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s18.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s18.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 17
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s19.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s19.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 18
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s20.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s20.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 19
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s21.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s21.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 20
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s24.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s24.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 21
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s25.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s25.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 24
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s26.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s26.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 25
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s27.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s27.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 26
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s28.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s28.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 27
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s29.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s29.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 28
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s30.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s30.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 29
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s31.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s31.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 30
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s32.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s32.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 31
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openReel('videos/s33.mp4')">
+
+                    <video muted playsinline preload="metadata">
+
+                        <source src="videos/s33.mp4" type="video/mp4">
+
+                    </video>
+
+                    <span>
+                        SNAP 32
+                    </span>
+
+                </button>
+
+
+
+
+
+
+
+
+
+
+
+                <!-- SNAP PHOTO -->
+
+                <button type="button" class="snap-memory" onclick="openPhoto('images/s23.jpeg')">
+
+                    <img src="images/s23.jpeg" alt="Snap memory">
+
+                    <span>
+                        SNAP 33
+                    </span>
+
+                </button>
+
+                <button type="button" class="snap-memory" onclick="openPhoto('images/s34.jpeg')">
+
+                    <img src="images/s34.jpeg" alt="Snap memory">
+
+                    <span>
+                        SNAP 34
+                    </span>
+
+                </button>
+
 
             </div>
 
@@ -966,7 +2075,7 @@
                 </p>
 
                 <div class="future-signature">
-                    — Srivalli
+                    —valli🖤
                 </div>
 
             </div>
@@ -1079,9 +2188,9 @@
         <section id="finalLetter" class="extra-section hidden final-letter-section">
             <button type="button" class="back-btn" onclick="closeSection('finalLetter')">← BACK TO ARCHIVE</button>
             <div class="final-letter-wrap">
-                <span class="small-text">12 / THE FINAL LETTER</span>
+                <span class="small-text">12 / A LETTER</span>
                 <h2>Out of all the people life could have given me…</h2>
-                <p class="final-highlight">I'm glad I got you.</p>
+                <p class="final-highlight">IAndhuko telidhu annaya kani nuv matram naku chala special anthe</p>
                 <p>Whatever happens next…<br>
                     Life manalni different directions lo teesukellina, busy ayina, years pass ayina…<br>
                     I hope we never become strangers.</p>
@@ -1089,22 +2198,676 @@
                     Keep finding beautiful things.<br>
                     Keep chasing the life you want.</p>
                 <p>And one day life chaala busy ayyi photos theeyadam kuda marchipothe…<br>
-                    at least aa moments ela feel ayyayo marchipokunda undam.<br><br>
+                    at least aa moments ela feel ayyamo marchipokunda undham Annaya<br><br>
                     Because photos may fade…<br>
                     but some memories don't.</p>
                 <div class="final-signature">— Yours ❤️</div>
                 <div class="final-end">THE END? <span>Probably not.</span></div>
             </div>
         </section>
-
-
         <!-- =================================================
+     CARD 14 — HIS RESPONSES
+================================================= -->
+
+        <section id="responses" class="extra-section hidden">
+
+            <button type="button" class="back-btn" onclick="closeSection('responses')">
+
+                ← BACK TO ARCHIVE
+
+            </button>
+
+
+            <div class="section-intro">
+
+                <span class="small-text">
+                    ARCHIVE 14 / HIS WORDS
+                </span>
+
+                <h2>
+                    The Answers<br>
+                    You <em>Left Behind.</em>
+                </h2>
+
+                <p class="section-intro-text">
+                    Questions asked once.<br>
+                    Answers preserved here.
+                </p>
+
+            </div>
+
+
+            <div class="responses-list">
+
+
+                <!-- RESPONSE 01 -->
+
+                <article class="response-item">
+
+                    <span class="response-number">
+                        01
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa full name enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        rapetisrivalli
+                    </p>
+
+                </article>
+
+
+                <!-- RESPONSE 02 -->
+
+                <article class="response-item">
+
+                    <span class="response-number">
+                        02
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu “no” cheppaleni oka thing enti? 😂
+                    </h3>
+
+                    <p class="response-answer">
+                        nen em adigana nuvvu no cheppalevuu
+                    </p>
+
+                </article>
+
+
+                <!-- RESPONSE 03 -->
+
+                <article class="response-item">
+
+                    <span class="response-number">
+                        03
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu ekkuvaga ye type of songs enjoy chesthanu?
+                    </h3>
+
+                    <p class="response-answer">
+                        love songs
+                    </p>
+
+                </article>
+
+
+                <!-- RESPONSE 04 -->
+
+                <article class="response-item">
+
+                    <span class="response-number">
+                        04
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa perfect day ela untundi ani nuvvu anukuntunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        calls and msgs full busy person
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        05
+                    </span>
+
+                    <h3 class="response-question">
+                        Nannu instant-ga happy chese thing enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        natho matladadam
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        06
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu ekkuva time waste chese pani enti? 😂
+
+                        <p class="response-answer">
+                            cooking
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        07
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa biggest dream enti ani nuvvu anukuntunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        vaditho pelli
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        08
+                    </span>
+
+                    <h3 class="response-question">
+                        Life lo nenu deni gurinchi most serious-ga untanu?
+                    </h3>
+
+                    <p class="response-answer">
+                        every relationship
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        09
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu ekkuvaga deni gurinchi worry or overthink chesthanu?
+                    </h3>
+
+                    <p class="response-answer">
+                        relationship
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        10
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu upset ayinappudu usually em chesthanu?
+                    </h3>
+
+                    <p class="response-answer">
+                        andharini avoid chesthav
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        11
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu angry ayinappudu first nuvvu notice chese thing enti? 👀
+                    </h3>
+
+                    <p class="response-answer">
+                        alagadam
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        12
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu ekkuvaga overthink chese topic enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        relationship
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        13
+                    </span>
+
+                    <h3 class="response-question">
+                        “Naaku em problem ledu” ani cheppina, actually nannu hurt chese thing enti?
+
+                        <p class="response-answer">
+                            nen edho ani overthinking cheyadam
+                        </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        14
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa gurinchi others easily understand cheyyaleni oka thing enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        nuvvu andhulo ayina true ga vunta
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        15
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu secretly proud-ga feel ayye thing enti ani nuvvu anukuntunnav?
+
+                    </h3>
+
+                    <p class="response-answer">
+                        bond
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        16
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu life lo lose avvakudadhu ani ekkuvaga fear ayye thing enti?
+
+                        <p class="response-answer">
+                            our relationship
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        17
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu eppudu most happy-ga untanu ani nuvvu anukuntunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        enjoy your most important persons
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        18
+                    </span>
+
+                    <h3 class="response-question">
+                        Naalo neeku most annoying thing enti? 😂 Honest-ga cheppu!
+                    </h3>
+
+                    <p class="response-answer">
+                        nen ammayi ni flirting chesa time lo
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        19
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu ninnu ekkuvaga irritate chese pani enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        overthinking
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        20
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu chese ye thing chusi neeku automatic-ga navvu vasthundi?
+                    </h3>
+
+                    <p class="response-answer">
+                        em cheppina vinakunda malli adhe overthinking chesthav
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        21
+                    </span>
+
+                    <h3 class="response-question">
+                        Mana iddariki unna funniest memory enti? 😂
+                    </h3>
+
+                    <p class="response-answer">
+                        vadini iterate chesa time lo
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        22
+                    </span>
+
+                    <h3 class="response-question">
+                        Mana iddari madhya jarigina most ridiculous fight enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        no reason don't talking too mee
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        23
+                    </span>
+
+                    <h3 class="response-question">
+                        Mana arguments lo usually evaru win avutharu? And please… DON'T LIE. 👀
+
+                    </h3>
+
+                    <p class="response-answer">
+                        nuvve
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        24
+                    </span>
+
+                    <h3 class="response-question">
+                        Nannu just 3 words lo describe cheyyali ante, aa 3 words enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        best relationship every . most important person .wlle wishe
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        25
+                    </span>
+
+                    <h3 class="response-question">
+                        Naatho unna nee favorite memory enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        every tiem spending too you its my favourite memory
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        26
+                    </span>
+
+                    <h3 class="response-question">
+                        Naatho jarigina ye moment ni nuvvu life-long marchipovu?
+                    </h3>
+
+                    <p class="response-answer">
+                        anakapalli
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        27
+                    </span>
+
+                    <h3 class="response-question">
+                        Mana relationship lo eppatiki change avvakudadhu ani nuvvu anukune thing enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        trust
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        28
+                    </span>
+
+                    <h3 class="response-question">
+                        5 years tarvatha nannu ekkada imagine chesthunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        raghu valla intlo
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        29
+                    </span>
+
+                    <h3 class="response-question">
+                        Future lo nenu elanti person avuthanu ani nuvvu anukuntunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        ma bava ki pellam laa
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        30
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa future kosam nuvvu naaku oka advice ivvalante, adi enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        nv baga vundu vadini baga chusko
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        31
+                    </span>
+
+                    <h3 class="response-question">
+                        Na gurinchi naaku kuda teliyani oka thing nuvvu notice chesav anukunte, adi enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        em levu niku ani telsu nak kuda ani telsu
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        32
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa nundi nuvvu nerchukunna oka thing enti?
+
+                        <p class="response-answer">
+                            true gah vundadam nd em ayina cool la react avvadam
+                        </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        33
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu realize avvakunda neeku nerpinchina oka lesson enti?
+
+                        <p class="response-answer">
+                            loev kosma na ichina advage
+                        </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        34
+                    </span>
+
+                    <h3 class="response-question">
+                        Naatho oka day ni malli relive cheyyagaligithe, ye day choose chesthav? Why?
+                    </h3>
+
+                    <p class="response-answer">
+                        anakapalli
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        35
+                    </span>
+
+                    <h3 class="response-question">
+                        20 years tarvatha manam malli kalisinappudu, mana relationship lo em change avvakudadhu ani
+                        nuvvu hope chesthav?
+                    </h3>
+
+                    <p class="response-answer">
+                        mana bond
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        36
+                    </span>
+
+                    <h3 class="response-question">
+                        Nuvvu normally naatho cheppavu… but ippudu cheppali ante, naaku em chepthav?
+
+                        <p class="response-answer">
+                            nen kida nilane overthinking chestha
+                        </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        37
+                    </span>
+
+                    <h3 class="response-question">
+                        Nenu nee life lo exactly what place occupy chesthunnanu ani nuvvu feel avuthunnav?
+                    </h3>
+
+                    <p class="response-answer">
+                        best person evary
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        38
+                    </span>
+
+                    <h3 class="response-question">
+                        Naa gurinchi nuvvu secretly admire chese quality enti?
+                    </h3>
+
+                    <p class="response-answer">
+                        opikaga vundadam
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        39
+                    </span>
+
+                    <h3 class="response-question">
+                        Nuvvu vere vallaki nannu introduce cheyyali ante… “Srivalli is the kind of person who ______.”
+                        Complete the sentence. ❤️
+                    </h3>
+
+                    <p class="response-answer">
+                        sri valla is the most and important person to mee
+                    </p>
+
+                </article>
+                <article class="response-item">
+
+                    <span class="response-number">
+                        40
+                    </span>
+
+                    <h3 class="response-question">
+                        Annaya… ippudu jokes pakkana pedithe. Naa kosam nee heart lo unna oka thing cheppu… adi nenu
+                        eppudu marchipokudadhu ani nuvvu anukuntunnav. ❤️
+                    </h3>
+
+                    <p class="response-answer">
+                        you are my best sister in every
+                    </p>
+
+                </article>
+                <p class="responses-end">
+                    IVI NUV RASINAVE ANNAYA<br>
+                    IKKADE UNTAYI ❤️
+                </p>
+
+
+                <!-- CONTINUE THE SAME FORMAT -->
+                <!-- RESPONSE 05 → RESPONSE 41 -->
+
+            </div>
+
+        </section>
+
+        <!-- ========================1
+         ========================
      END
 ================================================= -->
 
 
         <section class="vault-stats" aria-label="Memory Vault statistics">
-            <div class="vault-stat"><span>12</span><small>ARCHIVES</small></div>
+            <div class="vault-stat"><span>14</span><small>ARCHIVES</small></div>
             <div class="vault-stat"><span>21</span><small>YEARS OF YOU</small></div>
             <div class="vault-stat"><span>2022 → ∞</span><small>STORY STILL WRITING</small></div>
         </section>
@@ -1134,28 +2897,6 @@
             <p>Already written chapters are safe here.<br>New ones can always be added.</p>
         </section>
 
-        <section class="archive-ending">
-
-            <p class="small-text">
-                BEFORE YOU LEAVE…
-            </p>
-
-            <h2>
-                Mana memories lo oka<br>
-                <em>favorite chapter nuvve.</em>
-            </h2>
-
-            <p>
-                ❤️💙
-            </p>
-
-            <div class="signature">
-                — valli
-            </div>
-
-        </section>
-
-
         <footer>
 
             <span>
@@ -1169,196 +2910,6 @@
         </footer>
 
     </main>
-
-
-
-    <style id="memory-vault-emotional-enhancements">
-        .vault-stats {
-            max-width: 1100px;
-            margin: 40px auto 0;
-            padding: 18px 22px;
-            border-top: 1px solid rgba(238, 233, 223, .10);
-            border-bottom: 1px solid rgba(238, 233, 223, .10);
-            display: flex;
-            justify-content: center;
-            gap: 38px;
-            flex-wrap: wrap;
-            text-align: center
-        }
-
-        .vault-stat span {
-            display: block;
-            color: var(--gold);
-            font-size: 10px;
-            letter-spacing: 2px
-        }
-
-        .vault-stat small {
-            display: block;
-            margin-top: 6px;
-            color: #77736c;
-            font-size: 8px;
-            letter-spacing: 1.5px
-        }
-
-        .random-memory-wrap {
-            max-width: 900px;
-            margin: 75px auto 30px;
-            text-align: center
-        }
-
-        .random-memory-label {
-            color: var(--gold);
-            font-size: 9px;
-            letter-spacing: 4px
-        }
-
-        .random-memory {
-            min-height: 95px;
-            margin: 22px auto 25px;
-            padding: 25px;
-            border: 1px solid rgba(238, 233, 223, .10);
-            background: rgba(255, 255, 255, .018);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #b9b3aa;
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 22px;
-            line-height: 1.45;
-            transition: opacity .25s ease, transform .25s ease
-        }
-
-        .memory-btn {
-            padding: 13px 22px;
-            border: 1px solid rgba(200, 170, 114, .45);
-            color: var(--gold-light);
-            font-size: 9px;
-            letter-spacing: 2px;
-            transition: .3s ease
-        }
-
-        .memory-btn:hover {
-            background: rgba(200, 170, 114, .08);
-            transform: translateY(-2px)
-        }
-
-        .vault-whisper {
-            position: fixed;
-            left: 50%;
-            bottom: 28px;
-            transform: translate(-50%, 20px);
-            width: min(520px, calc(100% - 30px));
-            padding: 18px 22px;
-            background: rgba(10, 10, 10, .94);
-            border: 1px solid rgba(200, 170, 114, .28);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, .45);
-            text-align: center;
-            z-index: 1200;
-            opacity: 0;
-            pointer-events: none;
-            transition: .45s ease
-        }
-
-        .vault-whisper.show {
-            opacity: 1;
-            transform: translate(-50%, 0)
-        }
-
-        .vault-whisper strong {
-            display: block;
-            color: var(--gold);
-            font-size: 8px;
-            letter-spacing: 3px;
-            margin-bottom: 8px
-        }
-
-        .vault-whisper span {
-            color: #b8b2a9;
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 17px
-        }
-
-        .archive-x {
-            max-width: 900px;
-            margin: 75px auto 0;
-            padding: 30px;
-            border: 1px solid rgba(200, 170, 114, .12);
-            text-align: center;
-            background: linear-gradient(180deg, rgba(200, 170, 114, .025), rgba(0, 0, 0, 0))
-        }
-
-        .archive-x .small-text {
-            color: #6f6a63
-        }
-
-        .archive-x h3 {
-            margin: 12px 0;
-            color: var(--gold-light);
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 32px;
-            font-weight: 400
-        }
-
-        .archive-x p {
-            color: #8d8981;
-            font-size: 11px;
-            line-height: 1.8;
-            margin-bottom: 20px
-        }
-
-        .archive-x button {
-            padding: 12px 20px;
-            border: 1px solid rgba(238, 233, 223, .16);
-            font-size: 8px;
-            letter-spacing: 2px;
-            color: #aaa49b
-        }
-
-        .archive-x-message {
-            display: none;
-            margin-top: 22px;
-            padding: 22px;
-            border-top: 1px solid rgba(238, 233, 223, .08);
-            color: #bdb7ae;
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 20px;
-            line-height: 1.5
-        }
-
-        .archive-x.opened .archive-x-message {
-            display: block
-        }
-
-        .vault-close {
-            padding: 90px 20px 50px;
-            text-align: center
-        }
-
-        .vault-close .small-text {
-            color: var(--gold);
-            letter-spacing: 4px
-        }
-
-        .vault-close h2 {
-            margin: 20px auto;
-            max-width: 700px;
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: clamp(35px, 6vw, 65px);
-            font-weight: 300;
-            line-height: 1
-        }
-
-        .vault-close p {
-            color: #77736c;
-            font-size: 11px;
-            line-height: 1.9
-        }
-
-        .vault-close em {
-            color: var(--gold-light)
-        }
-    </style>
     <div class="vault-whisper" id="vaultWhisper"><strong>THE VAULT REMEMBERS…</strong><span
             id="vaultWhisperText"></span></div>
 
@@ -1409,9 +2960,7 @@
                 clearTimeout(timer);
                 timer = setTimeout(() => whisper.classList.remove("show"), 4200);
             }
-            window.addEventListener("scroll", function () {
-                if (!shown && window.scrollY > 420) { shown = true; showWhisper(); }
-            }, { passive: true });
+
 
             const archiveX = document.getElementById("archiveX");
             const archiveXBtn = document.getElementById("archiveXBtn");
@@ -1423,7 +2972,33 @@
             }
         })();
     </script>
+    <!-- =================================================
+     MEDIA VIEWER
+     PHOTO + REEL
+================================================= -->
 
+    <div id="mediaViewer" class="media-viewer hidden">
+
+        <button type="button" class="media-viewer-close" onclick="closeMediaViewer(event)">
+            ×
+        </button>
+
+        <div class="media-viewer-content">
+
+            <!-- PHOTO -->
+            <img id="fullPhoto" src="" alt="Full photo">
+
+
+            <!-- REEL -->
+            <video id="fullReel" controls playsinline>
+
+                <source id="fullReelSource" src="" type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </div>
     <script src="script.js"></script>
 
 </body>

@@ -2,7 +2,7 @@
 // THE MEMORY VAULT
 // ========================================
 
-const SECRET_PASSWORD = "brother21";
+const SECRET_PASSWORD = "10011404";
 
 
 // ========================================
@@ -26,25 +26,21 @@ const errorMessage = document.getElementById("error");
 // BEGIN JOURNEY
 // ========================================
 
-if (beginBtn && opening && vault) {
+if (beginBtn) {
 
-    beginBtn.addEventListener("click", function () {
-
-        console.log("BEGIN THE JOURNEY clicked");
+    beginBtn.addEventListener("click", () => {
 
         opening.style.opacity = "0";
         opening.style.transform = "scale(1.04)";
 
-        setTimeout(function () {
+        setTimeout(() => {
 
             opening.classList.add("hidden");
 
             vault.classList.remove("hidden");
 
-            // Reset vault position
             vault.style.opacity = "1";
             vault.style.transform = "scale(1)";
-            vault.style.display = "flex";
 
         }, 900);
 
@@ -52,35 +48,29 @@ if (beginBtn && opening && vault) {
 
 }
 
+
 // ========================================
 // PASSWORD UNLOCK
 // ========================================
 
 function unlockVault() {
 
-    if (!passwordInput || !vault || !welcome) {
-        return;
-    }
+    if (!passwordInput) return;
 
-    const enteredPassword = passwordInput.value.trim();
+    const enteredPassword =
+        passwordInput.value.trim();
 
     if (enteredPassword === SECRET_PASSWORD) {
 
-        // Clear error
-        if (errorMessage) {
-            errorMessage.textContent = "";
-        }
+        errorMessage.textContent = "";
 
-        // Fade out vault
         vault.style.opacity = "0";
         vault.style.transform = "scale(1.04)";
 
-        setTimeout(function () {
+        setTimeout(() => {
 
-            // Hide vault
             vault.classList.add("hidden");
 
-            // Show welcome screen
             welcome.classList.remove("hidden");
 
             welcome.style.opacity = "1";
@@ -88,33 +78,22 @@ function unlockVault() {
 
         }, 900);
 
-    } else {
+    }
 
-        // Wrong password
-        if (errorMessage) {
-            errorMessage.textContent = "Not quite... try again.";
-        }
+    else {
+
+        errorMessage.textContent =
+            "Not quite... try again.";
 
         passwordInput.value = "";
 
-        // Shake input
         passwordInput.animate(
             [
-                {
-                    transform: "translateX(0)"
-                },
-                {
-                    transform: "translateX(-8px)"
-                },
-                {
-                    transform: "translateX(8px)"
-                },
-                {
-                    transform: "translateX(-5px)"
-                },
-                {
-                    transform: "translateX(0)"
-                }
+                { transform: "translateX(0)" },
+                { transform: "translateX(-8px)" },
+                { transform: "translateX(8px)" },
+                { transform: "translateX(-5px)" },
+                { transform: "translateX(0)" }
             ],
             {
                 duration: 400
@@ -126,42 +105,41 @@ function unlockVault() {
 }
 
 
-// ========================================
-// UNLOCK BUTTON
-// ========================================
-
+// Unlock button
 if (unlockBtn) {
 
-    unlockBtn.addEventListener("click", function () {
-
-        unlockVault();
-
-    });
+    unlockBtn.addEventListener(
+        "click",
+        unlockVault
+    );
 
 }
 
 
-// ========================================
-// PRESS ENTER FOR PASSWORD
-// ========================================
-
+// Press Enter
 if (passwordInput) {
 
-    passwordInput.addEventListener("keydown", function (event) {
+    passwordInput.addEventListener(
+        "keydown",
+        function (event) {
 
-        if (event.key === "Enter") {
+            if (event.key === "Enter") {
 
-            unlockVault();
+                unlockVault();
+
+            }
 
         }
-
-    });
+    );
 
 }
 
 
 // ========================================
 // ENTER ARCHIVE
+// ========================================
+// ========================================
+// ENTER ARCHIVE / OPEN STORY
 // ========================================
 
 if (enterArchive) {
@@ -172,26 +150,30 @@ if (enterArchive) {
             return;
         }
 
-        // Fade out welcome
+        console.log("OPEN STORY clicked");
+
         welcome.style.opacity = "0";
         welcome.style.transform = "scale(1.04)";
 
         setTimeout(function () {
 
-            // Hide welcome
             welcome.classList.add("hidden");
 
-            // Show archive
             archive.classList.remove("hidden");
 
             archive.style.opacity = "1";
             archive.style.transform = "scale(1)";
+            archive.style.display = "block";
 
-            // Scroll to top
             window.scrollTo({
                 top: 0,
                 behavior: "instant"
             });
+
+            // Whisper appears AFTER archive opens
+            setTimeout(function () {
+                showVaultWhisper();
+            }, 500);
 
         }, 900);
 
@@ -211,28 +193,41 @@ function openSection(sectionName) {
 
     if (!section) {
 
-        console.error("Section not found:", sectionName);
+        console.error(
+            "Section not found:",
+            sectionName
+        );
 
         return;
-
     }
 
-    // Keep the archive visible because
-    // the story sections are inside #archive
+
+    // ========================================
+    // MARK ARCHIVE AS OPEN
+    // ========================================
+
     if (archive) {
 
         archive.classList.add("section-open");
 
     }
 
-    // Open the requested section
+
+    // ========================================
+    // SHOW ONLY THE SELECTED SECTION
+    // ========================================
+
     section.classList.remove("hidden");
 
     section.style.display = "block";
     section.style.opacity = "1";
     section.style.transform = "translateY(0)";
 
-    // Scroll to the opened section
+
+    // ========================================
+    // SCROLL TO CHAPTER
+    // ========================================
+
     setTimeout(function () {
 
         section.scrollIntoView({
@@ -242,8 +237,25 @@ function openSection(sectionName) {
 
     }, 50);
 
-}
 
+    // ========================================
+    // SHOW MEMORY WHISPER
+    // ========================================
+
+    setTimeout(function () {
+
+        if (
+            typeof window.showVaultWhisper ===
+            "function"
+        ) {
+
+            window.showVaultWhisper();
+
+        }
+
+    }, 700);
+
+}
 
 // ========================================
 // CLOSE ARCHIVE SECTIONS
@@ -251,21 +263,20 @@ function openSection(sectionName) {
 
 function closeSection(sectionName) {
 
-    const section = document.getElementById(sectionName);
+    const section =
+        document.getElementById(sectionName);
 
     if (!section) return;
 
     section.classList.add("hidden");
 
-    section.style.display = "none";
-
-    section.style.opacity = "0";
-
-    section.style.transform = "translateY(20px)";
-
     if (archive) {
 
         archive.classList.remove("section-open");
+        archive.classList.remove("hidden");
+
+        archive.style.opacity = "1";
+        archive.style.transform = "translateY(0)";
 
     }
 
@@ -276,42 +287,77 @@ function closeSection(sectionName) {
 
 }
 
-// ========================================
-// VOICE MESSAGE
-// ========================================
 
-const voiceBtn = document.getElementById("voiceBtn");
-const voiceMessage = document.getElementById("voiceMessage");
+// ========================================================
+// CARD 05 — VOICE MESSAGES
+// ========================================================
 
-if (voiceBtn && voiceMessage) {
+const voiceButtons =
+    document.querySelectorAll(".voice-play");
 
-    voiceBtn.addEventListener("click", function () {
+voiceButtons.forEach(function (button) {
 
-        if (voiceMessage.paused) {
+    button.addEventListener("click", function () {
 
-            voiceMessage.play();
+        const audioId =
+            button.getAttribute("data-audio");
 
-            voiceBtn.innerHTML = "❚❚ PAUSE MESSAGE";
+        const audio =
+            document.getElementById(audioId);
+
+        if (!audio) return;
+
+
+        // Pause every other message
+        document
+            .querySelectorAll(".voice-play")
+            .forEach(function (otherButton) {
+
+                const otherId =
+                    otherButton.getAttribute("data-audio");
+
+                const otherAudio =
+                    document.getElementById(otherId);
+
+                if (otherAudio && otherAudio !== audio) {
+                    otherAudio.pause();
+                    otherAudio.currentTime = 0;
+                    otherButton.textContent =
+                        "▶ PLAY MESSAGE";
+                }
+
+            });
+
+
+        // Play / pause selected message
+        if (audio.paused) {
+
+            audio.play();
+
+            button.textContent =
+                "❚❚ PAUSE MESSAGE";
 
         } else {
 
-            voiceMessage.pause();
+            audio.pause();
 
-            voiceBtn.innerHTML = "▶ PLAY MESSAGE";
+            button.textContent =
+                "▶ PLAY MESSAGE";
 
         }
 
+
+        // Reset button after finishing
+        audio.onended = function () {
+
+            button.textContent =
+                "▶ PLAY MESSAGE";
+
+        };
+
     });
 
-
-    voiceMessage.addEventListener("ended", function () {
-
-        voiceBtn.innerHTML = "▶ PLAY MESSAGE";
-
-    });
-
-}
-
+});
 
 // ========================================
 // OPEN WHEN ENVELOPES
@@ -320,29 +366,33 @@ if (voiceBtn && voiceMessage) {
 function toggleEnvelope(card) {
 
     if (card) {
-
         card.classList.toggle("opened");
-
     }
 
 }
 
 
 // ========================================
-// BACK TO ARCHIVE
+// MAKE FUNCTIONS AVAILABLE TO HTML
+// ========================================
+
+window.openSection = openSection;
+window.closeSection = closeSection;
+window.toggleEnvelope = toggleEnvelope;
+
+
+// ========================================
+// DIRECT BACK TO ARCHIVE
 // ========================================
 
 function backToArchive() {
 
-    const sections =
-        document.querySelectorAll(".extra-section");
+    const story =
+        document.getElementById("storySection");
 
-    sections.forEach(function (section) {
-
-        section.classList.add("hidden");
-
-    });
-
+    if (story) {
+        story.classList.add("hidden");
+    }
 
     if (archive) {
 
@@ -353,7 +403,6 @@ function backToArchive() {
 
     }
 
-
     window.scrollTo({
         top: 0,
         behavior: "instant"
@@ -361,87 +410,315 @@ function backToArchive() {
 
 }
 
+window.backToArchive = backToArchive;
 
-// ========================================
-// ANNAYA AGE
-// ========================================
+// ========================================================
+// CARD 02 — MEDIA VIEWER
+// CLEAN FINAL VERSION
+// ========================================================
 
-// Annaya's birthday:
-// 10 January 2005
+function openPhoto(src) {
 
-const annayaBirthday = new Date(2005, 0, 10);
+    const viewer = document.getElementById("mediaViewer");
+    const photo = document.getElementById("fullPhoto");
+    const reel = document.getElementById("fullReel");
+
+    if (!viewer || !photo) {
+        console.error("Photo viewer elements not found.");
+        return;
+    }
+
+    /* Stop video */
+    if (reel) {
+        reel.pause();
+        reel.removeAttribute("src");
+        reel.load();
+        reel.style.display = "none";
+    }
+
+    /* Reset photo */
+    photo.style.display = "none";
+    photo.src = "";
+
+    /* Set photo */
+    photo.src = src;
+
+    photo.onload = function () {
+
+        photo.style.display = "block";
+
+    };
+
+    photo.onerror = function () {
+
+        console.error("Could not load photo:", src);
+
+        photo.style.display = "none";
+
+    };
+
+    /* Open viewer */
+    viewer.classList.remove("hidden");
+
+    viewer.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
 
 
-function calculateAge(birthday) {
+function openReel(videoPath) {
 
-    const today = new Date();
+    const viewer = document.getElementById("mediaViewer");
+    const photo = document.getElementById("fullPhoto");
+    const reel = document.getElementById("fullReel");
+    const source = document.getElementById("fullReelSource");
 
-    let age =
-        today.getFullYear() -
-        birthday.getFullYear();
+    if (!viewer || !reel || !source) {
+        console.error("Reel viewer elements missing.");
+        return;
+    }
+
+    console.log("Opening video:", videoPath);
+
+    // Hide photo
+    if (photo) {
+        photo.src = "";
+        photo.style.display = "none";
+    }
+
+    // Completely reset video
+    reel.pause();
+    reel.removeAttribute("src");
+    source.removeAttribute("src");
+
+    // Set new video source
+    source.src = videoPath;
+
+    // Important video settings
+    reel.controls = true;
+    reel.playsInline = true;
+    reel.autoplay = false;
+    reel.muted = false;
+
+    // Make viewer visible
+    viewer.classList.remove("hidden");
+    viewer.style.display = "flex";
+
+    // Make video visible
+    reel.style.display = "block";
+    reel.style.visibility = "visible";
+    reel.style.opacity = "1";
+
+    document.body.style.overflow = "hidden";
+
+    // Reload the source
+    reel.load();
+
+    // Wait until browser has actual video data
+    reel.onloadeddata = function () {
+
+        console.log("VIDEO FRAME LOADED");
+
+        reel.style.display = "block";
+
+        // Try playing
+        reel.play().catch(function (error) {
+
+            console.log(
+                "Autoplay blocked:",
+                error
+            );
+
+        });
+
+    };
+
+    reel.onerror = function () {
+
+        console.error(
+            "VIDEO ERROR:",
+            reel.error
+        );
+
+    };
+
+}
 
 
-    const currentMonth =
-        today.getMonth();
+// ========================================================
+// CLOSE MEDIA VIEWER
+// ========================================================
 
-    const birthMonth =
-        birthday.getMonth();
+function closeMediaViewer(event) {
 
+    const viewer = document.getElementById("mediaViewer");
+    const photo = document.getElementById("fullPhoto");
+    const reel = document.getElementById("fullReel");
 
-    const currentDate =
-        today.getDate();
+    if (!viewer) return;
 
-    const birthDate =
-        birthday.getDate();
+    /*
+       Close only when:
+       - clicking the dark background
+       - clicking X
+    */
 
+    if (event) {
 
-    // Birthday has not happened yet this year
-    if (
-        currentMonth < birthMonth ||
-        (
-            currentMonth === birthMonth &&
-            currentDate < birthDate
-        )
-    ) {
+        const clickedClose =
+            event.target.classList.contains(
+                "media-viewer-close"
+            );
 
-        age--;
+        const clickedBackground =
+            event.target === viewer;
+
+        if (!clickedClose && !clickedBackground) {
+
+            return;
+
+        }
 
     }
 
+    /* Hide viewer */
+    viewer.classList.add("hidden");
 
-    return age;
+    viewer.style.display = "none";
+
+    /* Stop photo */
+    if (photo) {
+
+        photo.onload = null;
+        photo.onerror = null;
+
+        photo.src = "";
+
+        photo.style.display = "none";
+
+    }
+
+    /* Stop video */
+    if (reel) {
+
+        reel.pause();
+
+        reel.onloadeddata = null;
+        reel.onerror = null;
+
+        reel.removeAttribute("src");
+
+        reel.load();
+
+        reel.style.display = "none";
+
+    }
+
+    document.body.style.overflow = "";
 
 }
 
 
-// ========================================
-// DISPLAY ANNAYA'S CURRENT AGE
-// ========================================
+// ========================================================
+// ESC KEY
+// ========================================================
 
-const ageElement =
-    document.getElementById("annayaAge");
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Escape") return;
+
+    const viewer =
+        document.getElementById("mediaViewer");
+
+    if (
+        viewer &&
+        !viewer.classList.contains("hidden")
+    ) {
+
+        closeMediaViewer();
+
+    }
+
+});
 
 
-if (ageElement) {
-
-    ageElement.textContent =
-        calculateAge(annayaBirthday);
-
-}
-
-
-// ========================================
+// ========================================================
 // MAKE FUNCTIONS AVAILABLE TO HTML
-// ========================================
+// ========================================================
 
-window.openSection =
-    openSection;
+window.openPhoto = openPhoto;
+window.openReel = openReel;
+window.closeMediaViewer = closeMediaViewer;
+// ========================================================
+// RETURN FROM QUESTIONNAIRE DIRECTLY TO ARCHIVE
+// ========================================================
 
-window.closeSection =
-    closeSection;
+window.addEventListener("load", function () {
 
-window.toggleEnvelope =
-    toggleEnvelope;
+    const shouldReturn =
+        sessionStorage.getItem("returnToArchive");
 
-window.backToArchive =
-    backToArchive;
+    if (shouldReturn !== "true") {
+        return;
+    }
+
+    // Remove flag so normal opening works next time
+    sessionStorage.removeItem("returnToArchive");
+
+
+    const opening =
+        document.getElementById("opening");
+
+    const vault =
+        document.getElementById("vault");
+
+    const welcome =
+        document.getElementById("welcome");
+
+    const archive =
+        document.getElementById("archive");
+
+
+    // Hide opening screen
+    if (opening) {
+        opening.classList.add("hidden");
+        opening.style.display = "none";
+    }
+
+
+    // Hide password screen
+    if (vault) {
+        vault.classList.add("hidden");
+        vault.style.display = "none";
+    }
+
+
+    // Hide welcome screen
+    if (welcome) {
+        welcome.classList.add("hidden");
+        welcome.style.display = "none";
+    }
+
+
+    // Show archive cards
+    if (archive) {
+
+        archive.classList.remove("hidden");
+
+        archive.style.display = "block";
+        archive.style.opacity = "1";
+        archive.style.visibility = "visible";
+        archive.style.transform = "none";
+
+        archive.classList.remove("section-open");
+
+
+        // Go to the top where the cards begin
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        });
+    }
+
+});
