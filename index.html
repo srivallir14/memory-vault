@@ -1250,7 +1250,7 @@
                             <source src="videos/annaya43.mp4" type="video/mp4">
                         </video>
 
-                       <span>REEL 43</span>
+                        <span>REEL 43</span>
 
                     </button>
 
@@ -2971,6 +2971,38 @@
                 });
             }
         })();
+        window.addEventListener("load", function () {
+
+            if (window.location.hash !== "#archive") {
+                return;
+            }
+
+            const opening = document.getElementById("opening");
+            const vault = document.getElementById("vault");
+            const welcome = document.getElementById("welcome");
+            const archive = document.getElementById("archive");
+
+            if (opening) {
+                opening.classList.add("hidden");
+            }
+
+            if (vault) {
+                vault.classList.add("hidden");
+            }
+
+            if (welcome) {
+                welcome.classList.add("hidden");
+            }
+
+            if (archive) {
+                archive.classList.remove("hidden");
+
+                archive.style.display = "block";
+                archive.style.visibility = "visible";
+                archive.style.opacity = "1";
+            }
+
+        });
     </script>
     <!-- =================================================
      MEDIA VIEWER
