@@ -4953,3 +4953,87 @@ bottom: 28px;
     }
 
 }
+/* =========================================================
+   CARD 02 — LATEST INSTAGRAM REELS
+========================================================= */
+
+.latest-instagram-reels {
+    width: min(1200px, 100%);
+
+    margin: -35px auto 100px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(238, 233, 223, .10);
+
+    border-bottom:
+        1px solid
+        rgba(238, 233, 223, .10);
+}
+
+.latest-instagram-reels p {
+    margin-bottom: 14px;
+
+    color: #6f6a63;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.latest-instagram-reels a {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border:
+        1px solid
+        rgba(200, 170, 114, .35);
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+.latest-instagram-reels a:hover {
+    color: var(--cream);
+
+    border-color: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+    .latest-instagram-reels {
+        margin: -15px auto 70px;
+
+        padding: 28px 12px;
+    }
+
+    .latest-instagram-reels p {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .latest-instagram-reels a {
+        font-size: 7px;
+        letter-spacing: 2px;
+
+        padding: 11px 14px;
+    }
+
+}
