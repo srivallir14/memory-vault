@@ -4859,24 +4859,32 @@ bottom: 28px;
     z-index: 2;
 }
 /* =========================================================
-   CARD 02 — SOCIALS MOBILE HORIZONTAL SCROLL
+   CARD 02 — SOCIAL CARDS
+   MOBILE HORIZONTAL SWIPE
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    .card2-social-grid {
+    .card2-socials {
         width: 100%;
+        overflow: visible !important;
+    }
+
+    .card2-social-grid {
+        width: 100% !important;
 
         display: flex !important;
-
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
 
+        gap: 12px !important;
+
         overflow-x: auto !important;
-        overflow-y: hidden;
+        overflow-y: hidden !important;
 
-        gap: 16px;
+        padding: 0 0 12px !important;
 
-        padding-bottom: 8px;
+        margin: 0 !important;
 
         -webkit-overflow-scrolling: touch;
 
@@ -4889,22 +4897,17 @@ bottom: 28px;
         display: none;
     }
 
-
     .card2-social {
         flex: 0 0 88% !important;
 
         width: 88% !important;
-
         min-width: 88% !important;
 
+        max-width: 88% !important;
+
         scroll-snap-align: start;
-    }
 
-}
-@media (max-width: 600px) {
-
-    .card2-socials {
-        overflow: hidden;
+        box-sizing: border-box;
     }
 
 }
