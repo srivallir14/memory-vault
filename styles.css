@@ -5037,3 +5037,101 @@ bottom: 28px;
     }
 
 }
+/* =========================================================
+   CARD 02 — LATEST INSTAGRAM REELS
+========================================================= */
+
+.latest-instagram-reels {
+    width: min(1200px, 100%);
+    margin: 45px auto 90px;
+    padding: 30px 20px;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(238, 233, 223, .12);
+    border-bottom: 1px solid rgba(238, 233, 223, .12);
+
+    position: relative;
+    z-index: 50;
+}
+
+.latest-instagram-reels p {
+    display: block !important;
+
+    margin: 0 0 18px;
+
+    color: #6f6a63;
+
+    font-size: 8px;
+    line-height: 1.6;
+    letter-spacing: 3px;
+}
+
+.latest-instagram-reels a {
+    display: inline-block !important;
+
+    padding: 14px 20px;
+
+    color: var(--gold);
+
+    border: 1px solid rgba(200, 170, 114, .45);
+
+    text-decoration: none;
+
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+    position: relative;
+    z-index: 51;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .latest-instagram-reels {
+        width: calc(100% - 24px);
+
+        margin: 35px auto 60px;
+        padding: 28px 10px;
+
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        overflow: visible !important;
+    }
+
+    .latest-instagram-reels p {
+        display: block !important;
+
+        margin-bottom: 16px;
+
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .latest-instagram-reels a {
+        display: inline-block !important;
+
+        max-width: 100%;
+
+        padding: 13px 12px;
+
+        font-size: 7px;
+        letter-spacing: 2px;
+
+        white-space: normal;
+    }
+
+}
