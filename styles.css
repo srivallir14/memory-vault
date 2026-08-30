@@ -3725,28 +3725,29 @@ bottom: 28px;
     cursor: default;
     opacity: .55;
 }
-
 /* =========================================================
    CARD 02 — REELS
-   SAME SIZE & STYLE AS THE PHOTOS
+   SAME GRID + ORIENTATION AS SNAP VIDEOS
 ========================================================= */
 
 .card2-reels {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto 100px;
 }
 
 .card2-reel-grid {
-    max-width: 1200px;
+    width: min(1200px, 100%);
     margin: 40px auto 100px;
 
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 3px;
 
-    background: rgba(238,233,223,.10);
+    background: rgba(238, 233, 223, .10);
 }
 
 
@@ -3760,7 +3761,11 @@ bottom: 28px;
     width: 100%;
     height: 390px;
 
+    min-width: 0;
+    min-height: 0;
+
     padding: 0;
+    margin: 0;
 
     overflow: hidden;
 
@@ -3769,16 +3774,17 @@ bottom: 28px;
     background: #080808;
 
     cursor: pointer;
-
-    transition:
-        transform .7s ease,
-        filter .7s ease;
 }
 
 
-/* VIDEO */
+/* =========================================================
+   REEL VIDEO
+========================================================= */
 
 .card2-reel video {
+    position: absolute;
+    inset: 0;
+
     width: 100%;
     height: 100%;
 
@@ -3795,7 +3801,9 @@ bottom: 28px;
 }
 
 
-/* HOVER */
+/* =========================================================
+   HOVER
+========================================================= */
 
 .card2-reel:hover video {
     transform: scale(1.05);
@@ -3811,7 +3819,6 @@ bottom: 28px;
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     z-index: 2;
@@ -3821,7 +3828,7 @@ bottom: 28px;
     background:
         linear-gradient(
             to top,
-            rgba(0,0,0,.65),
+            rgba(0, 0, 0, .65),
             transparent 45%
         );
 }
@@ -3839,33 +3846,35 @@ bottom: 28px;
     top: 50%;
     left: 50%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     width: 54px;
     height: 54px;
 
-    z-index: 4;
+    z-index: 10;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    box-sizing: border-box;
+
     border:
         1px solid
-        rgba(255,255,255,.65);
+        rgba(255, 255, 255, .65);
 
     border-radius: 50%;
 
-    color: white;
-
-    font-size: 15px;
+    color: #fff;
 
     background:
-        rgba(0,0,0,.35);
+        rgba(0, 0, 0, .38);
 
     backdrop-filter: blur(5px);
+
+    font-size: 15px;
+    line-height: 1;
 
     pointer-events: none;
 }
@@ -3881,13 +3890,15 @@ bottom: 28px;
     left: 16px;
     bottom: 14px;
 
-    z-index: 5;
+    z-index: 11;
 
-    color: white;
+    color: #fff;
 
     font-size: 8px;
 
     letter-spacing: 3px;
+
+    pointer-events: none;
 }
 
 
@@ -3903,7 +3914,7 @@ bottom: 28px;
     }
 
     .card2-reel {
-        height: 280px;
+        height: 300px;
     }
 
 }
@@ -3911,16 +3922,35 @@ bottom: 28px;
 
 /* =========================================================
    MOBILE
+   SAME 2-COLUMN ORIENTATION AS SNAP VIDEOS
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .card2-reel-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 3px;
     }
 
     .card2-reel {
-        height: 430px;
+        height: 280px;
+    }
+
+    .card2-reel::after {
+        width: 48px;
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+    .card2-reel span {
+        left: 12px;
+        bottom: 11px;
+
+        font-size: 7px;
+        letter-spacing: 2px;
     }
 
 }
@@ -3933,127 +3963,7 @@ bottom: 28px;
 @media (max-width: 400px) {
 
     .card2-reel {
-        height: 390px;
-    }
-
-}
-.card2-reel-grid {
-    max-width: 1200px;
-    margin: 40px auto 100px;
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 3px;
-}
-
-.card2-reel {
-    position: relative;
-
-    width: 100%;
-    height: 390px;
-
-    padding: 0;
-    margin: 0;
-
-    overflow: hidden;
-
-    border: 0;
-    background: #080808;
-
-    cursor: pointer;
-}
-
-.card2-reel video {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    pointer-events: none;
-}
-
-.card2-reel::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: 2;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.65),
-            transparent 45%
-        );
-
-    pointer-events: none;
-}
-
-.card2-reel::after {
-    content: "▶";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 54px;
-    height: 54px;
-
-    z-index: 4;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.65);
-    border-radius: 50%;
-
-    color: white;
-    font-size: 15px;
-
-    background: rgba(0,0,0,.35);
-
-    pointer-events: none;
-}
-
-.card2-reel span {
-    position: absolute;
-
-    left: 16px;
-    bottom: 14px;
-
-    z-index: 5;
-
-    color: white;
-
-    font-size: 8px;
-    letter-spacing: 3px;
-}
-
-@media (max-width: 900px) {
-
-    .card2-reel-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .card2-reel-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card2-reel {
-        height: 430px;
+        height: 250px;
     }
 
 }
