@@ -4911,3 +4911,45 @@ bottom: 28px;
     }
 
 }
+/* =========================================================
+   CARD 02 — MOBILE SOCIAL SWIPE FIX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .card2-social-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        width: 100% !important;
+
+        overflow-x: scroll !important;
+        overflow-y: hidden !important;
+
+        gap: 16px !important;
+
+        padding: 0 0 14px !important;
+        margin: 0 !important;
+
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-x !important;
+
+        scrollbar-width: none;
+    }
+
+    .card2-social-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card2-social {
+        flex: 0 0 88% !important;
+
+        width: 88% !important;
+        min-width: 88% !important;
+        max-width: 88% !important;
+
+        box-sizing: border-box;
+    }
+
+}
