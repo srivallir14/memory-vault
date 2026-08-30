@@ -722,3 +722,49 @@ window.addEventListener("load", function () {
     }
 
 });
+// ========================================================
+// CARD 04 — SNAP VIDEOS
+// ========================================================
+
+function loadSnapVideos() {
+
+    const grid = document.getElementById("snapMemoryGrid");
+
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    for (let i = 1; i <= 33; i++) {
+
+        const number = String(i).padStart(2, "0");
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "snap-memory";
+
+        button.onclick = function () {
+            openReel(`videos/s${i}.mp4`);
+        };
+
+        button.innerHTML = `
+            <video
+                muted
+                playsinline
+                preload="metadata"
+                poster="thumbnails/snap${number}.jpg">
+
+                <source
+                    src="videos/s${i}.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <span>SNAP ${number}</span>
+        `;
+
+        grid.appendChild(button);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadSnapVideos);

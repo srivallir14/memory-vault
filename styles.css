@@ -4528,3 +4528,423 @@ bottom: 28px;
     line-height: 2;
     letter-spacing: 3px;
 }
+/* =========================================================
+   CARD 04 — SNAP VIDEOS
+   SAME LAYOUT AS CARD 02 REELS
+========================================================= */
+
+.snap-memory-grid {
+    max-width: 1200px;
+    margin: 60px auto 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 3px;
+}
+
+
+/* =========================================================
+   SNAP CARD
+========================================================= */
+
+.snap-memory {
+    position: relative;
+
+    width: 100%;
+    height: 390px;
+
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+
+    border: 0;
+    background: #080808;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.snap-memory video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.snap-memory::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+.snap-memory.snap-video::after {
+    content: "▶";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 54px;
+    height: 54px;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+
+    color: white;
+    font-size: 15px;
+
+    background: rgba(0,0,0,.35);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SNAP NUMBER
+========================================================= */
+
+.snap-memory span {
+    position: absolute;
+
+    left: 16px;
+    bottom: 14px;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .snap-memory-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .snap-memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .snap-memory {
+        height: 430px;
+    }
+
+}
+/* =========================================================
+   CARD 04 — SNAP GRID
+   SAME STYLE AS CARD 02 REELS
+========================================================= */
+
+#video .snap-memory-grid {
+    width: min(1200px, 100%);
+    margin: 60px auto 100px;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+}
+
+
+/* =========================================================
+   SNAP ITEM
+========================================================= */
+
+#video .snap-memory {
+    position: relative;
+
+    width: 100% !important;
+    height: 390px !important;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    overflow: hidden;
+
+    border: 0 !important;
+
+    background: #080808;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SNAP IMAGE + VIDEO
+========================================================= */
+
+#video .snap-memory img,
+#video .snap-memory video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+#video .snap-memory::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, .65),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+
+
+/
+
+/* =========================================================
+   SNAP LABEL
+========================================================= */
+
+#video .snap-memory span {
+    position: absolute;
+
+    left: 16px;
+    bottom: 14px;
+
+    z-index: 11;
+
+    color: #ffffff;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #video .snap-memory-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #video .snap-memory-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 3px !important;
+    }
+
+    #video .snap-memory {
+        height: 280px !important;
+    }
+
+}
+/* =========================================================
+   CARD 04 — SNAP PLAY BUTTON
+========================================================= */
+
+#video .snap-memory {
+    position: relative;
+}
+
+
+/* VIDEO PLAY ICON */
+
+#video .snap-play {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 54px;
+    height: 54px;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.38);
+
+    color: #fff;
+
+    font-size: 15px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* PHOTO / VIDEO LABEL */
+
+#video .snap-label {
+    position: absolute;
+
+    left: 16px;
+    bottom: 14px;
+
+    z-index: 21;
+
+    color: #fff;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    pointer-events: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #video .snap-play {
+        width: 48px;
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+}
+/* =========================================================
+   CARD 04 — VIDEO COVER
+========================================================= */
+
+.video-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-card .card-cover-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    z-index: 0;
+}
+
+.video-card .video-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.10),
+            rgba(0,0,0,.75)
+        );
+}
+
+.video-card .card-number,
+.video-card .card-content {
+    position: relative;
+    z-index: 2;
+}
