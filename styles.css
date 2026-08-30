@@ -5135,3 +5135,115 @@ bottom: 28px;
     }
 
 }
+/* =========================================================
+   CARD 02 — LATEST INSTAGRAM REELS
+   MOBILE VISIBILITY FIX
+========================================================= */
+
+.latest-instagram-reels {
+    width: min(1200px, 100%) !important;
+
+    margin: 40px auto 80px !important;
+    padding: 32px 16px !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative !important;
+    z-index: 50 !important;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(238, 233, 223, .12);
+    border-bottom: 1px solid rgba(238, 233, 223, .12);
+
+    box-sizing: border-box;
+}
+
+.latest-instagram-reels p {
+    display: block !important;
+
+    margin: 0 0 18px !important;
+
+    color: #6f6a63;
+
+    font-size: 8px;
+    line-height: 1.6;
+    letter-spacing: 3px;
+}
+
+.latest-instagram-reels a {
+    display: inline-block !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    padding: 14px 18px !important;
+
+    color: var(--gold) !important;
+
+    border: 1px solid rgba(200, 170, 114, .45);
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 8px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    position: relative !important;
+    z-index: 51 !important;
+}
+
+@media (max-width: 600px) {
+
+    .latest-instagram-reels {
+        width: calc(100% - 24px) !important;
+
+        margin: 35px auto 60px !important;
+
+        padding: 28px 10px !important;
+
+        display: block !important;
+
+        overflow: visible !important;
+    }
+
+    .latest-instagram-reels p {
+        display: block !important;
+
+        margin-bottom: 16px !important;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .latest-instagram-reels a {
+        display: inline-block !important;
+
+        max-width: 100%;
+
+        padding: 13px 12px !important;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+        white-space: normal;
+
+        word-break: normal;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .card2-reel {
+        height: 280px !important;
+    }
+
+}
